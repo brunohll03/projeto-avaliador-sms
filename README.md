@@ -32,6 +32,7 @@ projeto-avaliador-sms/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
+├── main.py
 │
 ├── dataset/
 │   ├── original/
@@ -69,18 +70,9 @@ projeto-avaliador-sms/
 │   └── clustering_model.pkl
 │
 ├── backend/
-│   ├── app.py
-│   │
-│   ├── routes/
-│   │   └── prediction.py
-│   │
-│   └── services/
-│       └── prediction_service.py
 │
 └── frontend/
-    ├── index.html
-    ├── style.css
-    └── script.js
+   
 ```
 
 
