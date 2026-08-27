@@ -27,36 +27,108 @@ Analisar mensagens SMS e apresentar classificações que auxiliem o usuário a i
 ## Estrutura do Projeto
 
 ```text
-projeto/
+projeto-avaliador-sms/
 │
-├── data/
-│   └── dataset.csv
+├── README.md
+├── requirements.txt
+├── .gitignore
 │
-├── models/
-│   └── modelos.py
+├── dataset/
+│   ├── original/
+│   │   └── dataset_original.csv
+│   │
+│   └── processed/
+│       └── dataset_final.csv
+│
+├── notebooks/
+│   ├── 01_analise_dataset.ipynb
+│   ├── 02_aprendizado_supervisionado.ipynb
+│   ├── 03_aprendizado_nao_supervisionado.ipynb
+│   ├── 04_avaliacao_modelos.ipynb
+│   └── 05_visualizacoes.ipynb
 │
 ├── src/
-│   ├── preprocessing/
-│   │   └── limpeza.py
 │   │
-│   ├── supervised/
-│   │   └── classificacao.py
+│   ├── data/
+│   │   ├── load_data.py
+│   │   └── clean_data.py
 │   │
-│   ├── unsupervised/
-│   │   └── clustering.py
+│   ├── models/
+│   │   ├── supervised.py
+│   │   ├── unsupervised.py
+│   │   └── predict.py
 │   │
 │   ├── evaluation/
-│   │   └── metricas.py
+│   │   └── metrics.py
 │   │
 │   └── visualization/
-│       └── graficos.py
+│       └── plots.py
+│
+├── models/
+│   ├── classification_model.pkl
+│   └── clustering_model.pkl
 │
 ├── backend/
-│   └── app.py
+│   ├── app.py
+│   │
+│   ├── routes/
+│   │   └── prediction.py
+│   │
+│   └── services/
+│       └── prediction_service.py
 │
-├── frontend/
-│   └── app.py
-│
-├── requirements.txt
-│
-└── README.md
+└── frontend/
+    ├── index.html
+    ├── style.css
+    └── script.js
+```
+
+
+## Abordagens de Machine Learning
+
+### Aprendizado Supervisionado
+
+Utilização de algoritmos de classificação para identificar as categorias das mensagens a partir de dados previamente rotulados.
+
+### Aprendizado Não Supervisionado
+
+Utilização de técnicas de **clustering** para identificar grupos e padrões naturais entre as mensagens.
+
+## Avaliação
+
+Serão utilizadas métricas para avaliar o desempenho dos modelos:
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Matriz de Confusão
+
+Também serão analisados os erros dos modelos, principalmente nas classificações relacionadas a spam.
+
+## Visualização
+
+Serão implementadas visualizações para auxiliar na análise dos dados e dos modelos:
+
+- Distribuição das categorias;
+- Matriz de confusão;
+- Visualização dos agrupamentos encontrados pelo clustering;
+- Distribuição das classificações;
+- Comparação de desempenho entre modelos.
+
+## Aspectos Éticos
+
+O projeto considera os seguintes aspectos:
+
+- Privacidade dos usuários;
+- Anonimização das mensagens;
+- Consentimento para utilização dos dados;
+- Possíveis vieses do dataset;
+- Transparência sobre as limitações dos modelos;
+- Risco de confiança excessiva na classificação da IA.
+
+## Princípio da Solução
+
+A ferramenta tem como objetivo **auxiliar o usuário na avaliação das informações**, fornecendo indicadores e classificações que apoiem o pensamento crítico.
+
+A IA não deve substituir a análise do usuário nem determinar, de forma definitiva, se uma mensagem é verdadeira ou falsa.
