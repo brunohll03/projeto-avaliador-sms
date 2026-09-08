@@ -458,25 +458,25 @@ Fluxograma:
                      
 Relação entre os dois tipos de aprendizado:
 
-                 MACHINE LEARNING
-                        │
-           ┌────────────┴────────────┐
-           ↓                         ↓
-    SUPERVISIONADO            NÃO SUPERVISIONADO
-           │                         │
-           ↓                         ↓
-       XGBoost                    K-Means
-           │                         │
-           ↓                         ↓
-     TF-IDF + 24                Embeddings
-      Features                       │
-           │                         │
-           ↓                         ↓
-   Classificar SMS             Agrupar SMS
-           │                         │
-           ↓                         ↓
-  Golpe / Não golpe          Grupo 0 / Grupo 1
-           │                         │
-           ↓                         ↓
-     Predição                 Descoberta de
-                               padrões
+                         MACHINE LEARNING
+                                │
+                ┌───────────────┴───────────────┐
+                ↓                               ↓
+        SUPERVISIONADO                  NÃO SUPERVISIONADO
+                │                               │
+                ↓                               ↓
+             XGBoost                          K-Means
+                │                               │
+                ↓                               ↓
+         TF-IDF + 24                      Embeddings
+           Features                             │
+                │                               │
+                ↓                               ↓
+        Classificar SMS                  Agrupar SMS
+                │                               │
+                ↓                               ↓
+       Golpe / Não golpe               Grupo 0 / Grupo 1
+                │                               │
+                ↓                               ↓
+            Predição                     Descoberta de
+                                           padrões
