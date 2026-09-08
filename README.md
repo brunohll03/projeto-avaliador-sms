@@ -476,4 +476,3 @@ Relação entre os dois tipos de aprendizado
            ↓                         ↓
      Predição                 Descoberta de
                                padrões
-=======
