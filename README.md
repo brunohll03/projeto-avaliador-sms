@@ -408,7 +408,8 @@ o aprendizado não supervisionado busca responder:
 
 Dessa forma, as duas abordagens possuem objetivos diferentes e complementares dentro do projeto.
 
-Fluxograma
+Fluxograma:
+
                     DATASET PRONTO
                           │
                           ↓
