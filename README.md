@@ -454,7 +454,10 @@ Fluxograma:
                           │
                           ↓
                      CONCLUSÃO
-Relação entre os dois tipos de aprendizado
+
+                     
+Relação entre os dois tipos de aprendizado:
+
                  MACHINE LEARNING
                         │
            ┌────────────┴────────────┐
