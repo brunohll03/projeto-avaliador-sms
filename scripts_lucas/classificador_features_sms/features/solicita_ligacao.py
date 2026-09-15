@@ -1,0 +1,17 @@
+"""Pedido de ligação, mesmo quando não informa um número."""
+
+from ..regras import acoes, solicita, trechos
+
+
+def classificar(sms: str) -> int:
+    for trecho in trechos(sms):
+        for acao in acoes(trecho, r"ligue|telefone"):
+            # "Ligue o aparelho" não é uma ligação telefônica.
+            resto = trecho[acao.end():].strip()
+            if resto.startswith(("o aparelho", "a tv", "o computador", "a luz", "o celular")):
+                continue
+            if acao.group() == "telefone" and (not resto or resto[0] in ":0123456789(+"):
+                continue  # Rótulo "Telefone: (19)..." não é imperativo.
+            return 1
+    return solicita(sms, r"telefone|ligacao|0800|0300|0303|0900",
+                    verbos=r"entre em contato|chame|faca|realize|retorne")
