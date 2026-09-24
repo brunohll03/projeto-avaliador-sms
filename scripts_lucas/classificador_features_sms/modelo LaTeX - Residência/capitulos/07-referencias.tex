@@ -1,0 +1,19 @@
+\section{Fontes e manutenção do documento}
+\subsection{Fontes locais de implementação}
+O conteúdo foi conferido nos 34 módulos Python de \termotecnico{features\_\allowbreak{}bibliotecas}, nos arquivos \termotecnico{\_\allowbreak{}definicoes.json}, \termotecnico{README.md} e \termotecnico{VALIDACAO.md}, e nos resultados \termotecnico{validacao/avaliacao\_\allowbreak{}semantica.json} e \termotecnico{validacao/exemplo\_\allowbreak{}execucao.json}. As definições e os resultados individuais foram extraídos desses arquivos, sem presumir que um exemplo positivo tenha sido classificado corretamente.
+
+\subsection{Documentação das ferramentas}
+\begin{enumerate}[label={\textbf{[\arabic*]}},leftmargin=2.2em,itemsep=0.8em]
+\item HUGGING FACE. \textit{Transformers: pipelines}. \url{https://huggingface.co/docs/transformers/main_classes/pipelines}.
+\item LAURER, Moritz. \textit{mDeBERTa-v3-base-mnli-xnli: cartão do modelo}. \url{https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli}.
+\item PYTORCH. \textit{Documentação do PyTorch}. \url{https://pytorch.org/docs/stable/index.html}.
+\item LINKIFY-IT-PY. \textit{Documentação do extrator}. \url{https://linkify-it-py.readthedocs.io/en/latest/}.
+\item DRYSDALE, David. \textit{Python phonenumbers}. \url{https://github.com/daviddrysdale/python-phonenumbers}.
+\item LANGUAGE-TOOL-PYTHON. \textit{Uso e requisitos do pacote}. \url{https://pypi.org/project/language-tool-python/}.
+\item REGEX. \textit{Pacote regex e propriedades Unicode}. \url{https://pypi.org/project/regex/}.
+\end{enumerate}
+
+\subsection{Recursos do modelo LaTeX utilizados}
+O documento foi escrito neste próprio diretório, usando \termotecnico{main.tex}, metadados de \termotecnico{config/dados.tex} e a capa institucional. Foram reutilizados os comandos \termotecnico{cabecalhomarca}, \termotecnico{logomarca} e \termotecnico{termotecnico}, os ambientes \termotecnico{codigofonte}, \termotecnico{caixainfo}, \termotecnico{caixaatencao} e \termotecnico{caixadica}, além de tabelas e sumário.
+
+O conteúdo fica nos sete arquivos da pasta \termotecnico{capitulos}. Para recompilar, execute \termotecnico{make pdf} neste diretório. O comando usa XeLaTeX e atualiza \termotecnico{main.pdf}. Ao modificar scripts ou hipóteses, revise também as fichas e os resultados antes de gerar uma nova edição.

@@ -1,0 +1,116 @@
+{
+  "solicita_senha": {
+    "hipotese": "O remetente pede que o destinatário informe, envie ou digite sua senha.",
+    "explicacao": "Detecta pedido de senha; menção a senha alterada e conselho para nunca compartilhar são controles negativos.",
+    "positivo": "Para confirmar seu cadastro, informe sua senha de acesso no formulário abaixo.",
+    "negativo": "Nunca compartilhe sua senha."
+  },
+  "solicita_codigo_autenticacao": {
+    "hipotese": "O remetente pede que o destinatário forneça um código de autenticação, token ou código recebido por SMS ou WhatsApp.",
+    "explicacao": "Distingue autenticação de cupom, código de produto e CVV de cartão; informar um código ao usuário não é solicitar esse código.",
+    "positivo": "Digite aqui o código de 6 números que você recebeu por SMS para confirmar sua conta.",
+    "negativo": "Um código será enviado por SMS."
+  },
+  "solicita_dados_bancarios": {
+    "hipotese": "O remetente solicita dados bancários do destinatário, como banco, agência ou número de conta bancária.",
+    "explicacao": "Não confundir conta de e-mail nem simples aviso de depósito com pedido de dados bancários.",
+    "positivo": "Para liberar seu benefício, informe o número do banco, agência e conta.",
+    "negativo": "Sua conta está ativa."
+  },
+  "solicita_dados_pessoais": {
+    "hipotese": "O remetente pede que o destinatário forneça dados pessoais, como CPF, RG, nome completo, endereço ou data de nascimento.",
+    "explicacao": "Exige intenção de solicitar; um aviso de CPF atualizado não basta.",
+    "positivo": "Para atualizar seu cadastro, informe seu CPF, nome completo e data de nascimento.",
+    "negativo": "Seu CPF foi atualizado."
+  },
+  "solicita_dados_cartao": {
+    "hipotese": "O remetente solicita o número, a validade, o CVV ou outros dados do cartão do destinatário.",
+    "explicacao": "Dados de cartão são distintos de agência e conta bancária; pode coexistir com pedido de dados pessoais.",
+    "positivo": "Para receber o reembolso, informe o número do cartão, validade e código de segurança.",
+    "negativo": "Seu cartão chegou."
+  },
+  "solicita_atualizacao_cadastro": {
+    "hipotese": "O remetente pede que o destinatário atualize, confirme ou regularize seu cadastro ou seus dados cadastrais.",
+    "explicacao": "Inclui finalidade de um comando de acesso. Informar que o cadastro está desatualizado não é necessariamente um pedido.",
+    "positivo": "Seu cadastro está desatualizado. Acesse o link abaixo para confirmar seus dados.",
+    "negativo": "Cadastro atualizado."
+  },
+  "solicita_pagamento": {
+    "hipotese": "O remetente pede que o destinatário faça um pagamento, depósito ou transferência de dinheiro.",
+    "explicacao": "PIX recebido é comprovante; não deve ser confundido com pedido para pagar.",
+    "positivo": "Para evitar o cancelamento do pedido, faça o pagamento de R$ 29,90 ainda hoje.",
+    "negativo": "O pagamento foi recebido."
+  },
+  "solicita_clique": {
+    "hipotese": "O remetente pede que o destinatário clique em um link ou botão, ou abra um endereço de internet.",
+    "explicacao": "Ter URL não basta. Conselho para não clicar deve ser negativo.",
+    "positivo": "Clique no link abaixo para atualizar seu cadastro imediatamente.",
+    "negativo": "https://exemplo.com"
+  },
+  "solicita_ligacao": {
+    "hipotese": "O remetente pede que o destinatário faça uma ligação telefônica.",
+    "explicacao": "Número de telefone isolado e comando para ligar um aparelho não equivalem a telefonar.",
+    "positivo": "Para confirmar o cancelamento, ligue imediatamente para 0800 123 4567.",
+    "negativo": "Telefone: (19) 99999-1234."
+  },
+  "menciona_bloqueio_conta": {
+    "hipotese": "A mensagem afirma que a conta, cartão, cadastro, acesso ou serviço do destinatário está ou será bloqueado, suspenso ou cancelado.",
+    "explicacao": "Detecta estado atual ou futuro. Bloqueio de rua e cancelamento de pedido não são o objeto desta feature.",
+    "positivo": "Sua conta será bloqueada hoje caso você não confirme seus dados.",
+    "negativo": "Sua conta não será bloqueada."
+  },
+  "carga_emocional": {
+    "hipotese": "A mensagem expressa ou tenta provocar emoções como medo, ansiedade, alegria, esperança, raiva ou surpresa.",
+    "explicacao": "Escore semântico do texto inteiro. Não é proporção de palavras emocionais, intensidade psicológica nem apenas sentimento positivo ou negativo.",
+    "positivo": "URGENTE!!! Você pode perder todo o seu dinheiro! Resolva AGORA antes que seja tarde!!!",
+    "negativo": "Seu código é 123456."
+  },
+  "possui_urgencia": {
+    "hipotese": "A mensagem pressiona o destinatário a agir rapidamente ou dentro de um prazo muito curto.",
+    "explicacao": "Distingue pressão temporal de uma simples data, como uma entrega que ocorreu hoje.",
+    "positivo": "Regularize sua conta imediatamente. Você tem somente até hoje.",
+    "negativo": "Sua compra foi entregue hoje."
+  },
+  "possui_ameaca": {
+    "hipotese": "A mensagem ameaça uma consequência negativa para o destinatário caso ele não realize uma ação solicitada.",
+    "explicacao": "Exige consequência condicionada à ação ou omissão. Conta já bloqueada pode ser aviso sem ameaça.",
+    "positivo": "Caso você não atualize seus dados hoje, sua conta será bloqueada.",
+    "negativo": "Sua conta está bloqueada."
+  },
+  "possui_linguagem_alarmista": {
+    "hipotese": "A mensagem usa um tom de alarme ou perigo para assustar ou causar preocupação no destinatário.",
+    "explicacao": "Alarmismo não é sinônimo de prazo curto. Caixa alta e exclamações isoladas não definem a categoria.",
+    "positivo": "ALERTA MÁXIMO! Detectamos uma atividade suspeita em sua conta. Resolva imediatamente!",
+    "negativo": "Atualize imediatamente."
+  },
+  "possui_recompensa": {
+    "hipotese": "A mensagem afirma que o destinatário ganhou ou pode resgatar um prêmio, recompensa, brinde ou bônus.",
+    "explicacao": "Busca benefício oferecido ao destinatário; uma notícia sobre prêmio de outra pessoa é controle negativo.",
+    "positivo": "Parabéns! Seu número foi sorteado e você ganhou um prêmio de R$ 5.000. Clique aqui para resgatar.",
+    "negativo": "O prêmio foi entregue ao João."
+  },
+  "possui_reembolso": {
+    "hipotese": "A mensagem informa que o destinatário tem reembolso, restituição ou devolução de dinheiro disponível para receber.",
+    "explicacao": "Política geral de reembolso ou pedido negado não equivale a valor disponível.",
+    "positivo": "Identificamos um reembolso de R$ 350,00 disponível para você. Clique aqui para receber.",
+    "negativo": "O reembolso foi negado."
+  },
+  "possui_vantagem_inesperada": {
+    "hipotese": "A mensagem oferece ao destinatário um benefício inesperado, uma seleção especial ou uma vantagem extraordinária não solicitada.",
+    "explicacao": "Infere indícios no texto; não conhece a expectativa real do destinatário. Salário habitual não é vantagem inesperada.",
+    "positivo": "Você foi selecionado para receber um benefício de R$ 1.500 que já está disponível para saque.",
+    "negativo": "Seu salário foi depositado."
+  },
+  "possui_oferta_financeira": {
+    "hipotese": "A mensagem oferece crédito, empréstimo, financiamento ou oportunidade de investimento ao destinatário.",
+    "explicacao": "Distingue oferta comercial de simples comprovante ou aviso de parcela paga.",
+    "positivo": "Seu crédito de R$ 20.000 foi pré-aprovado. Clique aqui para contratar agora.",
+    "negativo": "Seu dinheiro foi recebido."
+  },
+  "possui_chamada_acao": {
+    "hipotese": "O remetente solicita que o destinatário realize uma ação concreta.",
+    "explicacao": "Categoria ampla que pode coexistir com clique, pagamento e envio de dados. Relato no passado e proibição não são pedidos afirmativos.",
+    "positivo": "Informe seu CPF e clique no botão abaixo para confirmar.",
+    "negativo": "Nunca compartilhe sua senha."
+  }
+}

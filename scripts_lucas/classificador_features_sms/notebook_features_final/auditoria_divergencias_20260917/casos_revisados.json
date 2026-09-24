@@ -1,0 +1,1245 @@
+[
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "C?digo de login em Ativas Farma: 0564 @ativasfarma.com.br #0564",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "20"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Use 326829 para validar seu telefone na OLX. Para proteger sua conta, nao compartilhe este codigo. Nao pedimos codigos por WhatsApp ou telefone.",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "81"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "3m1Ew/Zt9XJAmazon: Your code is 499696. Don t share it. If you didn t request it, deny here https://amazon.com/a/c/r/1zv1pcvfLTr6AZHWNa6dIzXO3",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "82"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Amazon: Your code is 816874. Don t share it. If you didn t request it, deny here https://amazon.com/a/c/r/IgL20Hr6LI5bOUWactMAaazmg",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "83"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-106571 é seu código de verificação do Google.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "84"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-864638 é seu código de verificação do Google.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "85"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-733039 é seu código de verificação do Google.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "86"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-224961 é seu código de verificação do Google.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "87"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Código de verificação do Google: G-647825. Não compartilhe.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "88"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-572293 é seu código de verificação do Google.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "89"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Código de verificação do Google: G-724452. Não compartilhe.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "90"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Código de verificação do Google: G-970120. Não compartilhe.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "91"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "<#> Account: 318493 is your Samsung account verification code. bP2ROrn3fZQ",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "93"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Samsung SDS SVPN verification code is 3253831d",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "201"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Samsung SDS SVPN verification code is 49a24f5e",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "202"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Samsung SDS SVPN verification code is cbb883f3",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "203"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Samsung SDS SVPN verification code is 09151ca0",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "204"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Alelo: Seu codigo de verificacao e 101934. Nao compartilhe esse codigo.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "209"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Alelo: Seu codigo de verificacao e 170267. Nao compartilhe esse codigo.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "210"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Alelo: Seu codigo de verificacao e 476934. Nao compartilhe esse codigo.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "211"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Use 6507631 como codigo de seguranca da conta da Microsoft",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "212"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Use o codigo 370744 para autenticacao do Microsoft.",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "213"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Samsung SDS SVPN verification code is 9fddd322",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "221"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "SANTANDER: Informe o codigo 624758 para cadastrar sua chave de enderecamento Pix. Caso nao tenha solicitado, contate a Central de Atendimento.",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "233"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Dr. Ricardo enviou sua receita. Acesse pelo link: https://assistant.memed.com.br/p/JTxRLa?utm_source=sms. Codigo de autenticacao: 6663",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "252"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Ola. Este SMS foi informado para a autenticacao. Utilize o codigo para confirmar a operacao 723739. Obrigado, Equipe CIEE!",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "253"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Use o código 766864 para autenticação do Microsoft.",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "363"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Seu codigo de verificacao para iniciar sessao no Mercado Livre e 744246. Nao o compartilhe com ninguem.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "364"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "O codigo de confirmacao da sua conta da Sony e 662109.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "369"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "iFood: use este codigo para acessar sua conta. Para sua seguranca, nao compartilhe com outras pessoas. \n Copie o codigo de acesso: 492353",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "371"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Código da Netflix para confirmar seu número de telefone: 846842. Não compartilhe com ninguém.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "379"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "<#>Use o Codigo 218603 para acessar o app Vivo. Nunca forneca este codigo a terceiros, ele e pessoal e intransferivel 9Noa7IA/Y8r",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "380"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Seu código de verificação do YouTube é 607742",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "384"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "KaBuM: \n  O seu código KaBuM! é 447146.\n  Não compartilhe o código com ninguém.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "390"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-294484 is your Google verification code.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "394"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Magalu: \n  Seu código Magalu é: 619887. Esse código não será solicitado por um atendente via fone ou outro meio de comunicação.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "402"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "461498 e seu codigo de verificacao da Amazon. Nao o compartilhe",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "419"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Amazon: seu codigo e 936811. Nao foi voce? Acesse https://amazon.com.br/z/nSmau7wh6",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "420"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "<#> Sua conta do WhatsApp sera registrada em um novo celular\n Nunca compartilhe este codigo\n  Codigo do WhatsApp: 710-314\n  4sgLq1p5sV6",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "421"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Nubank: 008266 é o código para habilitar pagamentos com o NuPay na Amazon. Não repasse o código para ninguém. Não pedimos códigos por WhatsApp ou telefone.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "425"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "329300 é o código de redefinição de senha do Facebook",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "427"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "570518 e o codigo de verificacao da sua conta da Sony.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "429"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "enjoei: seu codigo de confirmacao e 321931",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "430"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "iPlace: Seu codigo de verificacao e: 098686",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "435"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Precisamos validar seu acesso AGORA. Envie o código de 6 dígitos que acabou de chegar no seu celular.",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "452"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Nunca envie sua senha ou código recebido por SMS para terceiros.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "686"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-483920 e o seu codigo de verificacao do Google. Nao compartilhe este codigo com ninguem.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "725"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "MFA Itaú: Seu codigo de seguranca para transferencia via Pix e 948210. Nao passe este codigo para terceiros.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "726"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-903123 e o seu codigo de confirmacao de 2 fatores do WhatsApp. Nao informe a ninguem.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "751"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-128491 e o seu codigo de acesso ao portal do aluno. Digite na tela de login.",
+    "esperado": 1,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "760"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551029 e o seu codigo de seguranca para login no sistema do banco.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "779"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-771230 e seu token de autenticacao no PicPay. Nao compartilhe com ninguem.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "790"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392019 e o seu codigo de seguranca da conta Mercado Livre.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "802"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-882910 e o seu codigo de confirmacao para acessar o portal da faculdade.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "814"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102938 e o codigo de autenticacao de duas etapas do seu e-mail.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "822"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-559201 e o seu codigo de seguranca da Microsoft. Nao compartilhe este codigo.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "831"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392011 e seu codigo de verificacao do Yahoo Mail.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "841"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881029 e o seu codigo de seguranca para cadastro no aplicativo da Uber.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "851"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-771829 e o seu codigo de validacao do Telegram.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "858"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-992019 e o seu codigo de confirmacao do Mercado Pago.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "865"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102948 e seu codigo de verificacao do PayPal. Nao compartilhe.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "873"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551092 e o seu codigo de autenticacao do Gov.br.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "881"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-992010 e seu codigo de seguranca da conta da Apple ID.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "890"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102931 e seu codigo de verificacao da conta do Mercado Pago.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "898"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-771920 e o seu codigo de confirmacao do iFood.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "906"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881023 e seu codigo de verificacao do cadastro da Netflix.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "912"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-559102 e seu codigo de seguranca para login na sua conta do Banco Inter.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "921"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102933 e seu codigo de confirmacao do Uber Eats.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "930"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392010 e seu codigo de verificacao para acesso ao aplicativo do Banco do Brasil.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "937"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881092 e seu codigo de verificacao do login no site da Amazon.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "945"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Banco do Brasil: Atualize seu token de seguranca para continuar realizando transferencias no app: https://bb-token-atualiza.online",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "946"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-559100 e seu codigo de autenticacao do aplicativo do Santander.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "953"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102919 e seu codigo de verificacao do login na conta do PagBank.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "961"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-771029 e seu codigo de autenticacao de login da conta do Kwai.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "968"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551920 e seu codigo de seguranca para login no portal da previdencia social.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "976"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392019 e o seu codigo de seguranca da conta da Shopee.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "983"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102988 e seu codigo de verificacao do cadastro no Magalu.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "991"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881920 e o seu codigo de autenticacao de login da conta do Instagram.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "999"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551029 e seu codigo de verificacao do cadastro da Conta Gov.br.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1006"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102988 e seu codigo de seguranca para login no portal do aluno da Unip.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1014"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-771900 e seu codigo de verificacao do login na conta do PayPal.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1023"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551029 e seu codigo de verificacao do portal de servicos da Prefeitura.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1031"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392019 e seu codigo de verificacao do cadastro na Uber.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1039"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102948 e seu codigo de verificacao do aplicativo do iFood.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1045"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551900 e seu codigo de seguranca para login na sua conta do Spotify.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1053"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881922 e seu codigo de verificacao do login no site do Mercado Livre.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1061"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102919 e seu codigo de verificacao do cadastro da Uber Eats.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1069"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551020 e seu codigo de verificacao de seguranca para login no portal do aluno.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1077"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-771920 e seu codigo de verificacao do login no aplicativo do WhatsApp.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1085"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102948 e seu codigo de seguranca para login no portal de compras da Casas Bahia.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1092"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392019 e seu codigo de verificacao do login no portal da previdencia.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1100"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551092 e seu codigo de seguranca para login no aplicativo da Caixa Econômica.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1109"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881900 e seu codigo de verificacao do login no site da Magalu.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1117"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102900 e seu codigo de autenticacao de login da conta do Instagram.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1124"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-771822 e seu codigo de verificacao do login no site da Amazon.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1131"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392011 e seu codigo de verificacao de seguranca da conta da Microsoft.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1138"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102930 e seu codigo de verificacao para acesso ao aplicativo do Banco C6.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1148"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551029 e seu codigo de verificacao de seguranca para login no portal do e-CAC.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1156"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881900 e seu codigo de autenticacao de login da conta do Mercado Pago.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1163"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102988 e seu codigo de verificacao de seguranca da conta da Netflix.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1170"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551029 e seu codigo de autenticacao para login no site da Receita Federal.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1178"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881900 e seu codigo de verificacao do login no aplicativo do TikTok.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1186"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102988 e seu codigo de autenticacao do portal do cliente da Vivo.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1193"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392019 e seu codigo de seguranca para login no portal da Prefeitura.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1201"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551092 e seu codigo de autenticacao de login do portal do aluno da USP.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1209"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881900 e seu codigo de verificacao do cadastro da Netflix.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1216"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102988 e seu codigo de verificacao para login no portal da previdencia social.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1224"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392011 e seu codigo de autenticacao de login no portal da faculdade.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1233"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551029 e seu codigo de verificacao para login no site oficial da Caixa.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1241"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881900 e seu codigo de seguranca para cadastro no aplicativo da Uber.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1248"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102988 e seu codigo de verificacao do cadastro do Mercado Livre.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1255"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392019 e seu codigo de verificacao do login na conta do iFood.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1263"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551029 e seu codigo de autenticacao de login da conta da Apple.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1270"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881900 e seu codigo de verificacao do login no portal do aluno.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1278"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102988 e seu codigo de verificacao para acesso a conta do iFood.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1286"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392019 e seu codigo de verificacao do cadastro da Uber.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1294"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-551029 e seu codigo de verificacao do login no portal de serviços da Prefeitura.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1302"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881900 e seu codigo de verificacao do login no portal da previdencia.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1310"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-102988 e seu codigo de seguranca para login no aplicativo do Nubank.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1317"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-392019 e seu codigo de verificacao do login no site da Magalu.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1325"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "G-881900 e seu codigo de verificacao do login no portal do aluno da Unip.",
+    "esperado": 0,
+    "origem": "divergencia revisada; PDF p.3",
+    "registro_original": "1335"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Informe seu token.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Atualize seu token de segurança.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Seu código é 123456.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Nunca envie seu código de autenticação.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Digite o código do cupom.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Informe o código de segurança do cartão.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Envie o código de 6 dígitos que chegou no celular.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Não use o código 123456 para autenticação.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "Use o código 123456 para autenticação.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "sms": "O código de rastreio é 123456. Acesse o site para verificar.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_dados_bancarios",
+    "sms": "Qual seu banco mesmo? Preciso selecionar na transferência.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_dados_bancarios",
+    "sms": "Não pergunte qual seu banco.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_dados_bancarios",
+    "sms": "Seu banco enviou um aviso.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_ligacao",
+    "sms": "Me liga quando puder.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_ligacao",
+    "sms": "Liga o computador.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_ligacao",
+    "sms": "Estou ligando para minha mãe.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_ligacao",
+    "sms": "Evite o bloqueio ligando para 0800-999-4411",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_pagamento",
+    "sms": "Faz o pagamento de R$ 49,90.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_pagamento",
+    "sms": "O pagamento foi recebido.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_pagamento",
+    "sms": "Não faz o pagamento.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_clique",
+    "sms": "Veja mais em https://exemplo.com",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_clique",
+    "sms": "Confirma aqui https://exemplo.com",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_clique",
+    "sms": "https://exemplo.com",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_clique",
+    "sms": "Veja seu CPF no documento impresso.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_atualizacao_cadastro",
+    "sms": "Confirma seu cadastro.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "solicita_atualizacao_cadastro",
+    "sms": "Seu cadastro foi confirmado.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Faz isso hj.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Responde o quanto antes.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Envie sua senha, tem só 10 minutos.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "O código chegou hoje.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Me liga quando puder.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "menciona_bloqueio_conta",
+    "sms": "A conta vai ser desativada.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "menciona_bloqueio_conta",
+    "sms": "A conta não será desativada.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_reembolso",
+    "sms": "Seu reembolso já foi aprovado.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_reembolso",
+    "sms": "Você tem direito ao reembolso.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_reembolso",
+    "sms": "Solicite seu ressarcimento.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_reembolso",
+    "sms": "Devolva o Pix recebido por engano.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_reembolso",
+    "sms": "Seu reembolso não foi aprovado.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_reembolso",
+    "sms": "Crédito disponível para empréstimo.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_recompensa",
+    "sms": "Vc ganhou R$ 300.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_recompensa",
+    "sms": "Você recebeu um bônus.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_recompensa",
+    "sms": "Tem um prêmio esperando por vc.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_recompensa",
+    "sms": "Você não ganhou o prêmio.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_linguagem_alarmista",
+    "sms": "O livro Capitalismo da atenção foi liberado.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_linguagem_alarmista",
+    "sms": "Atenção! Falha de segurança.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_linguagem_alarmista",
+    "sms": "Tem uma movimentação estranha aqui.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_linguagem_alarmista",
+    "sms": "Não houve falha de segurança.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_pix",
+    "sms": "Seu pagamento via Pix foi recebido.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_pix",
+    "sms": "O pixel da imagem.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_oferta_financeira",
+    "sms": "Internet por R$ 100 ao mês.",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_oferta_financeira",
+    "sms": "Contrate seu empréstimo.",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_url_encurtada",
+    "sms": "https://claro.com.br/abc",
+    "esperado": 0,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_url_encurtada",
+    "sms": "https://bit.ly/abc",
+    "esperado": 1,
+    "origem": "regressao de criterio; nao avaliacao independente"
+  },
+  {
+    "feature": "possui_chamada_acao",
+    "sms": "Você faz tudo corretamente.",
+    "esperado": 0,
+    "origem": "limites revistos após inspeção de impacto; regressão"
+  },
+  {
+    "feature": "possui_chamada_acao",
+    "sms": "Faz bastante tempo que não encontro todo mundo.",
+    "esperado": 0,
+    "origem": "limites revistos após inspeção de impacto; regressão"
+  },
+  {
+    "feature": "possui_chamada_acao",
+    "sms": "Ela faz bolos decorados.",
+    "esperado": 0,
+    "origem": "limites revistos após inspeção de impacto; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "O sistema já está normalizado. Retome seus estudos.",
+    "esperado": 0,
+    "origem": "limites revistos após inspeção de impacto; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Caso já tenha sido pago desconsidere.",
+    "esperado": 0,
+    "origem": "limites revistos após inspeção de impacto; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Conhecer livros em apenas 15 minutos? Baixe o app.",
+    "esperado": 0,
+    "origem": "limites revistos após inspeção de impacto; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Lembrei agora do almoço, me liga quando sair.",
+    "esperado": 0,
+    "origem": "limites revistos após inspeção de impacto; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Manda sua agência que faço o depósito hj.",
+    "esperado": 0,
+    "origem": "limites revistos após inspeção de impacto; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Garanta seu cartão agora mesmo.",
+    "esperado": 1,
+    "origem": "limites revistos após inspeção de impacto; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Seu cupom expira em 2 horas. Ative no link.",
+    "esperado": 1,
+    "origem": "prazo explícito entre frases; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Me manda sua senha. Preciso disso agora.",
+    "esperado": 1,
+    "origem": "prazo explícito entre frases; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Seu boleto vence hoje. Acesse o app.",
+    "esperado": 1,
+    "origem": "prazo explícito entre frases; regressão"
+  },
+  {
+    "feature": "possui_urgencia",
+    "sms": "Somente até hoje! Acesse o link.",
+    "esperado": 1,
+    "origem": "prazo explícito entre frases; regressão"
+  }
+]

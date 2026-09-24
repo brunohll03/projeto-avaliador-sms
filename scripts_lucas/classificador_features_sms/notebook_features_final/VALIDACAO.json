@@ -1,0 +1,11 @@
+{
+  "notebook": "11 células de código executadas em ordem, sem erro",
+  "sms_sinteticos": "144/144 casos-alvo concordantes; conjunto usado no desenvolvimento",
+  "regressao": "117 exemplos positivos/negativos anteriores verificados no teste automatizado",
+  "integridade": "4 testes automatizados aprovados; arquivos anteriores conferidos por hash",
+  "comparacao": "4326 divergências reconciliadas com métricas e painel",
+  "csv_painel": "parser testado com BOM, acentos, aspas, vírgulas e quebras de linha",
+  "graficos": "2 gráficos inspecionados visualmente",
+  "html": "gerado e estrutura/JavaScript conferidos; inspeção visual e interação no navegador não concluídas",
+  "bloqueio_visual": "Revisão automática rejeitou servidor local por possível exposição dos dados; navegador também bloqueou abertura direta file://. Nenhum contorno executado."
+}

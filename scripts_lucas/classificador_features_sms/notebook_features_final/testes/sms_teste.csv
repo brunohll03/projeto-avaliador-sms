@@ -1,0 +1,145 @@
+﻿id_teste,Mensagem,feature_alvo,esperado,pagina_pdf,justificativa
+T01_1,Informe sua senha para concluir a verificação.,solicita_senha,1,2,Pedido explícito de senha de acesso.
+T01_2,"Por favor, envie a senha de acesso à conta.",solicita_senha,1,2,Pedido explícito de senha de acesso.
+T01_3,Poderia digitar sua senha no formulário?,solicita_senha,1,2,Pedido explícito de senha de acesso.
+T01_4,Jamais compartilhe sua senha com terceiros.,solicita_senha,0,2,Contraexemplo: ausência da condição explícita; Uma confirmação de troca de senha ou orientação para não compartilhar não é solicitação.
+T01_5,Sua senha foi alterada com sucesso.,solicita_senha,0,2,Contraexemplo: ausência da condição explícita; Uma confirmação de troca de senha ou orientação para não compartilhar não é solicitação.
+T01_6,"Informe seu CPF, mas não envie sua senha.",solicita_senha,0,2,Contraexemplo: ausência da condição explícita; Uma confirmação de troca de senha ou orientação para não compartilhar não é solicitação.
+T02_1,Envie o token de autenticação para validar a operação.,solicita_codigo_autenticacao,1,3,"Pedido de código de autenticação, token ou verificação recebido por SMS/WhatsApp."
+T02_2,Informe o código recebido por WhatsApp.,solicita_codigo_autenticacao,1,3,"Pedido de código de autenticação, token ou verificação recebido por SMS/WhatsApp."
+T02_3,Poderia digitar o código de verificação?,solicita_codigo_autenticacao,1,3,"Pedido de código de autenticação, token ou verificação recebido por SMS/WhatsApp."
+T02_4,O código de acesso será enviado por SMS.,solicita_codigo_autenticacao,0,3,Contraexemplo: ausência da condição explícita; Código de produto ou cupom não conta; código de segurança do cartão pertence à feature de cartão.
+T02_5,Informe o código do produto comprado.,solicita_codigo_autenticacao,0,3,Contraexemplo: ausência da condição explícita; Código de produto ou cupom não conta; código de segurança do cartão pertence à feature de cartão.
+T02_6,Digite o código de segurança do cartão.,solicita_codigo_autenticacao,0,3,Contraexemplo: ausência da condição explícita; Código de produto ou cupom não conta; código de segurança do cartão pertence à feature de cartão.
+T03_1,Envie sua agência e o número da conta bancária.,solicita_dados_bancarios,1,4,"Pedido de banco, agência, número da conta ou dados bancários."
+T03_2,Precisamos que você informe seus dados bancários.,solicita_dados_bancarios,1,4,"Pedido de banco, agência, número da conta ou dados bancários."
+T03_3,Poderia confirmar o banco e a agência?,solicita_dados_bancarios,1,4,"Pedido de banco, agência, número da conta ou dados bancários."
+T03_4,Seu banco aprovou a transferência.,solicita_dados_bancarios,0,4,Contraexemplo: ausência da condição explícita; Conta ativa e conta de e-mail não são pedidos de dados bancários.
+T03_5,Informe o número do cartão e o CVV.,solicita_dados_bancarios,0,4,Contraexemplo: ausência da condição explícita; Conta ativa e conta de e-mail não são pedidos de dados bancários.
+T03_6,Não compartilhe os dados da sua conta bancária.,solicita_dados_bancarios,0,4,Contraexemplo: ausência da condição explícita; Conta ativa e conta de e-mail não são pedidos de dados bancários.
+T04_1,Envie seu nome completo e sua data de nascimento.,solicita_dados_pessoais,1,5,"Pedido de identificação ou contato: CPF, RG, nome completo, nascimento, endereço, telefone ou e-mail."
+T04_2,Informe seu telefone para retorno.,solicita_dados_pessoais,1,5,"Pedido de identificação ou contato: CPF, RG, nome completo, nascimento, endereço, telefone ou e-mail."
+T04_3,Poderia confirmar seu endereço de e-mail?,solicita_dados_pessoais,1,5,"Pedido de identificação ou contato: CPF, RG, nome completo, nascimento, endereço, telefone ou e-mail."
+T04_4,Seu CPF já consta no cadastro.,solicita_dados_pessoais,0,5,Contraexemplo: ausência da condição explícita; CPF apenas mencionado não basta. Listas e construções não previstas podem não ser reconhecidas.
+T04_5,Nunca envie seu RG por mensagem.,solicita_dados_pessoais,0,5,Contraexemplo: ausência da condição explícita; CPF apenas mencionado não basta. Listas e construções não previstas podem não ser reconhecidas.
+T04_6,Confirmamos o recebimento do seu endereço.,solicita_dados_pessoais,0,5,Contraexemplo: ausência da condição explícita; CPF apenas mencionado não basta. Listas e construções não previstas podem não ser reconhecidas.
+T05_1,Digite o CVV do seu cartão.,solicita_dados_cartao,1,6,"Pedido de número, validade, CVV/CVC, nome impresso ou código de segurança do cartão."
+T05_2,Informe o nome impresso no cartão e a validade.,solicita_dados_cartao,1,6,"Pedido de número, validade, CVV/CVC, nome impresso ou código de segurança do cartão."
+T05_3,"Envie o número, a validade e o código de segurança do cartão.",solicita_dados_cartao,1,6,"Pedido de número, validade, CVV/CVC, nome impresso ou código de segurança do cartão."
+T05_4,Seu cartão chegará amanhã.,solicita_dados_cartao,0,6,Contraexemplo: ausência da condição explícita; Aviso de entrega do cartão não é solicitação; pedido de agência não pertence a esta feature.
+T05_5,Informe a agência e a conta bancária.,solicita_dados_cartao,0,6,Contraexemplo: ausência da condição explícita; Aviso de entrega do cartão não é solicitação; pedido de agência não pertence a esta feature.
+T05_6,Não envie seu CVV nem o número do cartão.,solicita_dados_cartao,0,6,Contraexemplo: ausência da condição explícita; Aviso de entrega do cartão não é solicitação; pedido de agência não pertence a esta feature.
+T06_1,Atualize seus dados cadastrais para continuar.,solicita_atualizacao_cadastro,1,7,"Pedido para atualizar, confirmar, regularizar ou completar cadastro/dados."
+T06_2,Acesse o link para regularizar seu cadastro.,solicita_atualizacao_cadastro,1,7,"Pedido para atualizar, confirmar, regularizar ou completar cadastro/dados."
+T06_3,Poderia confirmar seus dados cadastrais?,solicita_atualizacao_cadastro,1,7,"Pedido para atualizar, confirmar, regularizar ou completar cadastro/dados."
+T06_4,Seu cadastro já está atualizado.,solicita_atualizacao_cadastro,0,7,Contraexemplo: ausência da condição explícita; Cadastro desatualizado é um estado; sem pedido não ativa esta feature.
+T06_5,O cadastro está incompleto.,solicita_atualizacao_cadastro,0,7,Contraexemplo: ausência da condição explícita; Cadastro desatualizado é um estado; sem pedido não ativa esta feature.
+T06_6,Não é necessário atualizar o cadastro.,solicita_atualizacao_cadastro,0,7,Contraexemplo: ausência da condição explícita; Cadastro desatualizado é um estado; sem pedido não ativa esta feature.
+T07_1,Quite o boleto para liberar o envio.,solicita_pagamento,1,8,"Pedido de pagamento, transferência, depósito, quitação ou PIX."
+T07_2,"Transfira R$ 45,00 para esta conta.",solicita_pagamento,1,8,"Pedido de pagamento, transferência, depósito, quitação ou PIX."
+T07_3,Você precisa fazer um PIX para concluir o pedido.,solicita_pagamento,1,8,"Pedido de pagamento, transferência, depósito, quitação ou PIX."
+T07_4,O pagamento da fatura foi recebido.,solicita_pagamento,0,8,"Contraexemplo: ausência da condição explícita; Recebemos seu PIX é confirmação, não pedido; PIX e pagamento são features diferentes."
+T07_5,Não faça a transferência solicitada.,solicita_pagamento,0,8,"Contraexemplo: ausência da condição explícita; Recebemos seu PIX é confirmação, não pedido; PIX e pagamento são features diferentes."
+T07_6,"Seu saldo disponível é de R$ 45,00.",solicita_pagamento,0,8,"Contraexemplo: ausência da condição explícita; Recebemos seu PIX é confirmação, não pedido; PIX e pagamento são features diferentes."
+T08_1,Toque neste link para confirmar: https://example.com/a,solicita_clique,1,9,"Comando para clicar/acessar/tocar link, botão ou endereço apresentado."
+T08_2,Acesse https://example.com/validar para continuar.,solicita_clique,1,9,"Comando para clicar/acessar/tocar link, botão ou endereço apresentado."
+T08_3,Poderia clicar no botão abaixo?,solicita_clique,1,9,"Comando para clicar/acessar/tocar link, botão ou endereço apresentado."
+T08_4,https://example.com/consulta,solicita_clique,0,9,Contraexemplo: ausência da condição explícita; Link sozinho não ativa a feature; não clique também não. Acesso sem destino explícito é tratado conservadoramente.
+T08_5,Não abra o link recebido.,solicita_clique,0,9,Contraexemplo: ausência da condição explícita; Link sozinho não ativa a feature; não clique também não. Acesso sem destino explícito é tratado conservadoramente.
+T08_6,O atendente acessou o site ontem.,solicita_clique,0,9,Contraexemplo: ausência da condição explícita; Link sozinho não ativa a feature; não clique também não. Acesso sem destino explícito é tratado conservadoramente.
+T09_1,Ligue para (19) 99999-1234 para confirmar.,solicita_ligacao,1,10,Pedido de ligação telefônica ao destinatário.
+T09_2,Entre em contato pelo telefone 0800 123 4567.,solicita_ligacao,1,10,Pedido de ligação telefônica ao destinatário.
+T09_3,Você pode telefonar para nossa central agora?,solicita_ligacao,1,10,Pedido de ligação telefônica ao destinatário.
+T09_4,Nosso telefone: (19) 99999-1234.,solicita_ligacao,0,10,Contraexemplo: ausência da condição explícita; Número de telefone sozinho e contato por e-mail não são pedido de ligação.
+T09_5,Ligue o computador para iniciar.,solicita_ligacao,0,10,Contraexemplo: ausência da condição explícita; Número de telefone sozinho e contato por e-mail não são pedido de ligação.
+T09_6,Não ligue para o número informado.,solicita_ligacao,0,10,Contraexemplo: ausência da condição explícita; Número de telefone sozinho e contato por e-mail não são pedido de ligação.
+T10_1,Seu cartão foi bloqueado por segurança.,menciona_bloqueio_conta,1,11,"Menção a bloqueio, suspensão ou cancelamento de conta, cartão, cadastro, serviço ou acesso."
+T10_2,O acesso será suspenso amanhã.,menciona_bloqueio_conta,1,11,"Menção a bloqueio, suspensão ou cancelamento de conta, cartão, cadastro, serviço ou acesso."
+T10_3,Seu serviço está cancelado.,menciona_bloqueio_conta,1,11,"Menção a bloqueio, suspensão ou cancelamento de conta, cartão, cadastro, serviço ou acesso."
+T10_4,Sua conta não será bloqueada.,menciona_bloqueio_conta,0,11,Contraexemplo: ausência da condição explícita; Bloqueio de rua ou cancelamento de pedido não contam; negação explícita de bloqueio é excluída nesta operacionalização.
+T10_5,Seu pedido foi cancelado pela loja.,menciona_bloqueio_conta,0,11,Contraexemplo: ausência da condição explícita; Bloqueio de rua ou cancelamento de pedido não contam; negação explícita de bloqueio é excluída nesta operacionalização.
+T10_6,A rua ficará bloqueada para obras.,menciona_bloqueio_conta,0,11,Contraexemplo: ausência da condição explícita; Bloqueio de rua ou cancelamento de pedido não contam; negação explícita de bloqueio é excluída nesta operacionalização.
+T11_1,Seu pedido foi enviado e será entregue na próxima semana.,carga_emocional,baixa,12,Categoria operacional pela proporção lexical e limites congelados; não é anotação psicológica.
+T11_2,A confirmação da compra está no aplicativo.,carga_emocional,baixa,12,Categoria operacional pela proporção lexical e limites congelados; não é anotação psicológica.
+T11_3,Alerta: a confirmação do seu pedido pode ser consultada no aplicativo durante o horário comercial.,carga_emocional,média,12,Categoria operacional pela proporção lexical e limites congelados; não é anotação psicológica.
+T11_4,Estou com medo mas vou consultar os dados do pedido no aplicativo durante a tarde.,carga_emocional,média,12,Categoria operacional pela proporção lexical e limites congelados; não é anotação psicológica.
+T11_5,Alerta! Perigo! Você pode perder seu dinheiro.,carga_emocional,alta,12,Categoria operacional pela proporção lexical e limites congelados; não é anotação psicológica.
+T11_6,Que alegria! Estou feliz com a surpresa!,carga_emocional,alta,12,Categoria operacional pela proporção lexical e limites congelados; não é anotação psicológica.
+T12_1,Confirme seus dados em duas horas.,possui_urgencia,1,13,Pressão para agir rapidamente ou antes de prazo próximo.
+T12_2,Pague agora para concluir a operação.,possui_urgencia,1,13,Pressão para agir rapidamente ou antes de prazo próximo.
+T12_3,Última chance para regularizar o cadastro.,possui_urgencia,1,13,Pressão para agir rapidamente ou antes de prazo próximo.
+T12_4,A compra foi entregue hoje.,possui_urgencia,0,13,Contraexemplo: ausência da condição explícita; Compra entregue hoje é relato. Uma data passada não implica urgência; datas livres e prazos escritos por extenso têm cobertura limitada.
+T12_5,"Responda quando puder, sem pressa.",possui_urgencia,0,13,Contraexemplo: ausência da condição explícita; Compra entregue hoje é relato. Uma data passada não implica urgência; datas livres e prazos escritos por extenso têm cobertura limitada.
+T12_6,Você realizou o pagamento há duas horas.,possui_urgencia,0,13,Contraexemplo: ausência da condição explícita; Compra entregue hoje é relato. Uma data passada não implica urgência; datas livres e prazos escritos por extenso têm cobertura limitada.
+T13_1,"Se você não pagar, perderá o acesso ao serviço.",possui_ameaca,1,14,Consequência negativa explicitamente condicionada à ação ou omissão do destinatário.
+T13_2,Atualize seus dados para evitar a suspensão da conta.,possui_ameaca,1,14,Consequência negativa explicitamente condicionada à ação ou omissão do destinatário.
+T13_3,"Regularize a dívida. Caso contrário, haverá multa.",possui_ameaca,1,14,Consequência negativa explicitamente condicionada à ação ou omissão do destinatário.
+T13_4,Sua conta está bloqueada.,possui_ameaca,0,14,Contraexemplo: ausência da condição explícita; Sua conta está bloqueada não contém por si só condição. Condicionais longas ou implícitas exigem revisão humana.
+T13_5,"Se você não responder, sua conta não será suspensa.",possui_ameaca,0,14,Contraexemplo: ausência da condição explícita; Sua conta está bloqueada não contém por si só condição. Condicionais longas ou implícitas exigem revisão humana.
+T13_6,"Pague quando puder, sem multa.",possui_ameaca,0,14,Contraexemplo: ausência da condição explícita; Sua conta está bloqueada não contém por si só condição. Condicionais longas ou implícitas exigem revisão humana.
+T14_1,ALERTA! Há uma atividade suspeita em sua conta.,possui_linguagem_alarmista,1,15,"Vocabulário explícito de gravidade, perigo, medo ou alerta."
+T14_2,ATENÇÃO! Seu dinheiro está em perigo.,possui_linguagem_alarmista,1,15,"Vocabulário explícito de gravidade, perigo, medo ou alerta."
+T14_3,Situação crítica! Existe risco imediato.,possui_linguagem_alarmista,1,15,"Vocabulário explícito de gravidade, perigo, medo ou alerta."
+T14_4,Atualize seu cadastro imediatamente.,possui_linguagem_alarmista,0,15,"Contraexemplo: ausência da condição explícita; Maiúsculas, exclamações e imediatamente sozinhos não bastam. Atenção também pode ser um aviso legítimo."
+T14_5,BOM DIA!!! Seu pedido chegou.,possui_linguagem_alarmista,0,15,"Contraexemplo: ausência da condição explícita; Maiúsculas, exclamações e imediatamente sozinhos não bastam. Atenção também pode ser um aviso legítimo."
+T14_6,Não há perigo na operação.,possui_linguagem_alarmista,0,15,"Contraexemplo: ausência da condição explícita; Maiúsculas, exclamações e imediatamente sozinhos não bastam. Atenção também pode ser um aviso legítimo."
+T15_1,Você foi sorteado e pode receber um prêmio.,possui_recompensa,1,16,"Alegação de prêmio, brinde ou benefício que o destinatário ganhou, ganhará ou pode resgatar por seleção/contato."
+T15_2,Seu brinde está disponível para retirada.,possui_recompensa,1,16,"Alegação de prêmio, brinde ou benefício que o destinatário ganhou, ganhará ou pode resgatar por seleção/contato."
+T15_3,Ganhe um bônus ao resgatar seu prêmio.,possui_recompensa,1,16,"Alegação de prêmio, brinde ou benefício que o destinatário ganhou, ganhará ou pode resgatar por seleção/contato."
+T15_4,Você não foi selecionado no sorteio.,possui_recompensa,0,16,Contraexemplo: ausência da condição explícita; Um prêmio entregue a outra pessoa ou um sorteio não ganho não contam.
+T15_5,O prêmio foi entregue à vencedora ontem.,possui_recompensa,0,16,Contraexemplo: ausência da condição explícita; Um prêmio entregue a outra pessoa ou um sorteio não ganho não contam.
+T15_6,O sorteio será transmitido pela televisão.,possui_recompensa,0,16,Contraexemplo: ausência da condição explícita; Um prêmio entregue a outra pessoa ou um sorteio não ganho não contam.
+T16_1,Seu estorno está liberado para recebimento.,possui_reembolso,1,17,"Alegação de devolução, restituição, estorno ou valor anteriormente pago disponível ao destinatário."
+T16_2,Você tem direito à restituição do valor pago.,possui_reembolso,1,17,"Alegação de devolução, restituição, estorno ou valor anteriormente pago disponível ao destinatário."
+T16_3,O reembolso de R$ 90 está disponível para você.,possui_reembolso,1,17,"Alegação de devolução, restituição, estorno ou valor anteriormente pago disponível ao destinatário."
+T16_4,Seu reembolso foi negado.,possui_reembolso,0,17,"Contraexemplo: ausência da condição explícita; Política de reembolso, reembolso negado e oferta de empréstimo não são devoluções."
+T16_5,Seu crédito está disponível para contratar um empréstimo.,possui_reembolso,0,17,"Contraexemplo: ausência da condição explícita; Política de reembolso, reembolso negado e oferta de empréstimo não são devoluções."
+T16_6,Leia a política de reembolso da loja.,possui_reembolso,0,17,"Contraexemplo: ausência da condição explícita; Política de reembolso, reembolso negado e oferta de empréstimo não são devoluções."
+T17_1,Você recebeu um crédito inesperado.,possui_vantagem_inesperada,1,18,"Indício textual de benefício extraordinário, seleção inesperada ou oportunidade exclusiva."
+T17_2,Um benefício está disponível para você sem ter solicitado.,possui_vantagem_inesperada,1,18,"Indício textual de benefício extraordinário, seleção inesperada ou oportunidade exclusiva."
+T17_3,Oportunidade exclusiva: desconto extraordinário para você.,possui_vantagem_inesperada,1,18,"Indício textual de benefício extraordinário, seleção inesperada ou oportunidade exclusiva."
+T17_4,Seu salário foi depositado conforme previsto.,possui_vantagem_inesperada,0,18,Contraexemplo: ausência da condição explícita; A expectativa real da pessoa é desconhecida. É uma aproximação textual com sobreposição a recompensa e oferta.
+T17_5,Não existe benefício disponível para você.,possui_vantagem_inesperada,0,18,Contraexemplo: ausência da condição explícita; A expectativa real da pessoa é desconhecida. É uma aproximação textual com sobreposição a recompensa e oferta.
+T17_6,Sua compra foi entregue normalmente.,possui_vantagem_inesperada,0,18,Contraexemplo: ausência da condição explícita; A expectativa real da pessoa é desconhecida. É uma aproximação textual com sobreposição a recompensa e oferta.
+T18_1,Empréstimo pré aprovado para você contratar.,possui_oferta_financeira,1,19,"Proposta de crédito, empréstimo, financiamento, investimento ou ganho financeiro."
+T18_2,Invista R$ 100 e receba rendimento mensal.,possui_oferta_financeira,1,19,"Proposta de crédito, empréstimo, financiamento, investimento ou ganho financeiro."
+T18_3,Oferecemos financiamento para você.,possui_oferta_financeira,1,19,"Proposta de crédito, empréstimo, financiamento, investimento ou ganho financeiro."
+T18_4,Pacote de internet por R$ 99 por mês.,possui_oferta_financeira,0,19,Contraexemplo: ausência da condição explícita; Preço de pacote de internet ou mercadoria não é automaticamente oferta financeira. Alguns rótulos originais podem seguir interpretação mais ampla.
+T18_5,A parcela do empréstimo já foi paga.,possui_oferta_financeira,0,19,Contraexemplo: ausência da condição explícita; Preço de pacote de internet ou mercadoria não é automaticamente oferta financeira. Alguns rótulos originais podem seguir interpretação mais ampla.
+T18_6,Não contrate o empréstimo anunciado.,possui_oferta_financeira,0,19,Contraexemplo: ausência da condição explícita; Preço de pacote de internet ou mercadoria não é automaticamente oferta financeira. Alguns rótulos originais podem seguir interpretação mais ampla.
+T19_1,Confira https://example.com/consulta.,possui_url,1,20,Presença de URL reconhecível na mensagem.
+T19_2,Endereço: www.example.com,possui_url,1,20,Presença de URL reconhecível na mensagem.
+T19_3,http://127.0.0.1:8080/consulta,possui_url,1,20,Presença de URL reconhecível na mensagem.
+T19_4,Contato: pessoa@example.com,possui_url,0,20,Contraexemplo: ausência da condição explícita; E-mail isolado não conta. Não abre o link nem avalia reputação; novas terminações de domínio podem escapar.
+T19_5,Versão do aplicativo: 1.2.3,possui_url,0,20,Contraexemplo: ausência da condição explícita; E-mail isolado não conta. Não abre o link nem avalia reputação; novas terminações de domínio podem escapar.
+T19_6,Endereço incompleto: https://,possui_url,0,20,Contraexemplo: ausência da condição explícita; E-mail isolado não conta. Não abre o link nem avalia reputação; novas terminações de domínio podem escapar.
+T20_1,Confira https://bit.ly/teste-sms,possui_url_encurtada,1,21,URL cujo domínio pertence à lista fixa de serviços encurtadores.
+T20_2,Veja https://tinyurl.com/teste-sms,possui_url_encurtada,1,21,URL cujo domínio pertence à lista fixa de serviços encurtadores.
+T20_3,Resumo: t.co/abc,possui_url_encurtada,1,21,URL cujo domínio pertence à lista fixa de serviços encurtadores.
+T20_4,Confira https://bit.ly.example.com/abc,possui_url_encurtada,0,21,Contraexemplo: ausência da condição explícita; URL curta não significa encurtador. bit.ly.exemplo.com não é bit.ly. A lista limitada não cobre todos os serviços existentes.
+T20_5,Confira https://example.com/bit.ly,possui_url_encurtada,0,21,Contraexemplo: ausência da condição explícita; URL curta não significa encurtador. bit.ly.exemplo.com não é bit.ly. A lista limitada não cobre todos os serviços existentes.
+T20_6,Confira https://bit.ly@example.com/abc,possui_url_encurtada,0,21,Contraexemplo: ausência da condição explícita; URL curta não significa encurtador. bit.ly.exemplo.com não é bit.ly. A lista limitada não cobre todos os serviços existentes.
+T21_1,Central: (19) 99999-1234.,possui_telefone,1,22,Presença de telefone brasileiro em formato reconhecível.
+T21_2,Contato: +55 11 3456-7890.,possui_telefone,1,22,Presença de telefone brasileiro em formato reconhecível.
+T21_3,Ligue para 19999991234.,possui_telefone,1,22,Presença de telefone brasileiro em formato reconhecível.
+T21_4,CPF: 19999991234.,possui_telefone,0,22,Contraexemplo: ausência da condição explícita; Validade estrutural não confirma linha ativa. Identificadores sem rótulo e alguns formatos ambíguos podem causar erros.
+T21_5,Código de autenticação: 19999991234.,possui_telefone,0,22,Contraexemplo: ausência da condição explícita; Validade estrutural não confirma linha ativa. Identificadores sem rótulo e alguns formatos ambíguos podem causar erros.
+T21_6,Contato em Londres: +44 20 8366 1177.,possui_telefone,0,22,Contraexemplo: ausência da condição explícita; Validade estrutural não confirma linha ativa. Identificadores sem rótulo e alguns formatos ambíguos podem causar erros.
+T22_1,Pagamento via PIX disponível.,possui_pix,1,23,Menção explícita ao sistema PIX.
+T22_2,Não faça PIX para desconhecidos.,possui_pix,1,23,Menção explícita ao sistema PIX.
+T22_3,Cadastre sua chave Pix.,possui_pix,1,23,Menção explícita ao sistema PIX.
+T22_4,O pixel da tela está apagado.,possui_pix,0,23,"Contraexemplo: ausência da condição explícita; Chave numérica sozinha não basta. Não faça PIX ainda menciona o sistema; pixel, Pixar e domínio com pix não contam."
+T22_5,Assisti a um filme da Pixar.,possui_pix,0,23,"Contraexemplo: ausência da condição explícita; Chave numérica sozinha não basta. Não faça PIX ainda menciona o sistema; pixel, Pixar e domínio com pix não contam."
+T22_6,https://pix.com/consulta,possui_pix,0,23,"Contraexemplo: ausência da condição explícita; Chave numérica sozinha não basta. Não faça PIX ainda menciona o sistema; pixel, Pixar e domínio com pix não contam."
+T23_1,Sua conta foi bloquiada.,possui_erros_ortografia_gramatica,1,24,Ao menos um erro identificado por regras ou ferramenta previamente fixadas.
+T23_2,Seus dados foi atualizado.,possui_erros_ortografia_gramatica,1,24,Ao menos um erro identificado por regras ou ferramenta previamente fixadas.
+T23_3,Comfirme seu cadastro.,possui_erros_ortografia_gramatica,1,24,Ao menos um erro identificado por regras ou ferramenta previamente fixadas.
+T23_4,vc pode responder pq preciso disso blz 😊,possui_erros_ortografia_gramatica,0,24,"Contraexemplo: ausência da condição explícita; Não pune automaticamente emoji ou falta de pontuação. Nomes/marcas podem gerar falsos positivos. Contagem é de alertas, não necessariamente palavras distintas."
+T23_5,Sua conta foi bloqueada.,possui_erros_ortografia_gramatica,0,24,"Contraexemplo: ausência da condição explícita; Não pune automaticamente emoji ou falta de pontuação. Nomes/marcas podem gerar falsos positivos. Contagem é de alertas, não necessariamente palavras distintas."
+T23_6,https://bloquiada.com,possui_erros_ortografia_gramatica,0,24,"Contraexemplo: ausência da condição explícita; Não pune automaticamente emoji ou falta de pontuação. Nomes/marcas podem gerar falsos positivos. Contagem é de alertas, não necessariamente palavras distintas."
+T24_1,Responda esta mensagem com seu nome.,possui_chamada_acao,1,25,"Comando explícito dirigido ao destinatário, como responder, enviar, acessar, ligar ou pagar."
+T24_2,Baixe o aplicativo para continuar.,possui_chamada_acao,1,25,"Comando explícito dirigido ao destinatário, como responder, enviar, acessar, ligar ou pagar."
+T24_3,Poderia conferir o pedido no aplicativo?,possui_chamada_acao,1,25,"Comando explícito dirigido ao destinatário, como responder, enviar, acessar, ligar ou pagar."
+T24_4,Você respondeu esta mensagem ontem.,possui_chamada_acao,0,25,"Contraexemplo: ausência da condição explícita; Relatos no passado e orientações negativas não contam. Discurso citado, ironia e escopos longos de negação têm cobertura limitada."
+T24_5,Nunca compartilhe sua senha.,possui_chamada_acao,0,25,"Contraexemplo: ausência da condição explícita; Relatos no passado e orientações negativas não contam. Discurso citado, ironia e escopos longos de negação têm cobertura limitada."
+T24_6,Seu pagamento foi recebido.,possui_chamada_acao,0,25,"Contraexemplo: ausência da condição explícita; Relatos no passado e orientações negativas não contam. Discurso citado, ironia e escopos longos de negação têm cobertura limitada."

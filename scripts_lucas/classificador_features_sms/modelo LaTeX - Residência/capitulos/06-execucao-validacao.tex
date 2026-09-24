@@ -1,0 +1,64 @@
+\section{Execução, evidências e limites}
+\subsection{Preparação do ambiente}
+Os comandos Python abaixo partem da raiz \textit{Residência Tecnológica - IA}, e não desta pasta LaTeX. São necessários Python 3.10 ou superior e Java 17 ou superior. O ambiente virtual mantém as dependências separadas de outros projetos.
+
+\begin{codigofonte}[Instalação na raiz do projeto]
+python3 -m venv classificador_features_sms/features_bibliotecas/.venv
+source classificador_features_sms/features_bibliotecas/.venv/bin/activate
+python -m pip install -r classificador_features_sms/features_bibliotecas/requirements.txt
+java -version
+\end{codigofonte}
+
+\begin{codigofonte}[Classificação e testes]
+python -m classificador_features_sms.features_bibliotecas.main --detalhes 'Informe sua senha.'
+python -m unittest classificador_features_sms.features_bibliotecas.test_bibliotecas -v
+python -m classificador_features_sms.features_bibliotecas.avaliar_exemplos > avaliacao_exemplos.json
+\end{codigofonte}
+
+A primeira inferência pode baixar pesos e tokenizador. A primeira revisão de escrita pode baixar LanguageTool. Depois de disponíveis os recursos, o processamento é local: o modelo executa no dispositivo configurado e o corretor atende em um servidor Java local. A flag de carregamento local do NLI não prepara o cache de Java automaticamente.
+
+\subsection{Uso por outro programa}
+\begin{codigofonte}[Instância explícita e encerramento do corretor]
+from classificador_features_sms.features_bibliotecas import (
+    ClassificadorFeatures, Configuracao,
+)
+
+config = Configuracao(limiar=0.70)
+with ClassificadorFeatures(config) as classificador:
+    resultado = classificador.analisar_sms(
+        "Informe sua senha."
+    )
+    print(resultado["features"])
+    print(resultado["detalhes"]["semanticas"]["solicita_senha"])
+\end{codigofonte}
+
+\clearpage
+\subsection{Como interpretar o JSON}
+\termotecnico{features} contém as 24 decisões. \termotecnico{detalhes.semanticas} associa cada feature NLI ao escore, limiar, hipótese e valor. \termotecnico{detalhes.urls}, \termotecnico{telefones} e \termotecnico{erros\_\allowbreak{}detectados} fornecem evidências dos extratores. A configuração registra modelo, revisão solicitada, revisão carregada, versão de LanguageTool e idioma do corretor.
+
+Um escore NLI explica a comparação numérica com o limiar, mas não localiza automaticamente o trecho responsável pela decisão. Já a extração de URL e os erros gramaticais incluem posições. Não se deve apresentar o escore como uma justificativa linguística completa.
+
+\subsection{Resultados documentados em 14/09/2026}
+\begin{tabularx}{\linewidth}{@{}p{0.45\linewidth}X@{}}
+\toprule
+\textbf{Verificação} & \textbf{Resultado registrado} \\
+\midrule
+Testes de funcionamento da nova versão & 13 testes aprovados. \\
+Testes da implementação original & 6 testes aprovados. \\
+Exemplos semânticos com modelo final & 27 acertos e 11 divergências em 38 casos. \\
+Execução completa com corretor local & 24 features e apontamento de ``bloquiada'' com sugestão ``bloqueada''. \\
+\bottomrule
+\end{tabularx}
+
+A revisão registrada do modelo é:\par
+\small\nolinkurl{8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c}\normalsize\par
+O ambiente informado no relatório foi Python 3.12.8 em macOS ARM64, CPU e OpenJDK 25.0.1. Este documento utiliza os resultados preservados; sua elaboração não representa uma nova avaliação dos modelos.
+
+\begin{caixaatencao}[O alcance dos 27 acertos]
+O conjunto contém apenas dois exemplos por feature semântica. Foi usado no desenvolvimento e na seleção do método; portanto, 27/38 não deve ser divulgado como acurácia esperada em SMS reais. As fichas individuais mostram os 38 resultados, inclusive os erros.
+\end{caixaatencao}
+
+\subsection{Diferenças frente à implementação anterior}
+A análise semântica passou de regras manuais para comparação NLI. Carga emocional deixou de ser proporção de palavras de um léxico; agora é escore semântico. A revisão de escrita usa regras e dicionário do LanguageTool, o que amplia a cobertura e também altera os falsos positivos. Telefonia usa metadados da biblioteca; URLs usam um extrator especializado; PIX continua sendo uma menção literal, com URLs mascaradas.
+
+Para comparar versões em um dataset, registre qual método produziu cada coluna. Mesmo nome de feature não garante decisões equivalentes entre implementações.

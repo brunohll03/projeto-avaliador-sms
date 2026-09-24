@@ -1,0 +1,58 @@
+\section{Bibliotecas e cálculo das decisões}
+\subsection{Biblioteca, modelo e regra são elementos diferentes}
+\textbf{Transformers} carrega e executa o modelo; \textbf{PyTorch} realiza as operações da rede neural. O modelo padrão é \termotecnico{MoritzLaurer/}\allowbreak\termotecnico{mDeBERTa-v3-base-mnli-xnli}. Ele foi preparado para inferência de linguagem natural, e não treinado especificamente nas 19 features deste projeto. \textbf{SentencePiece} integra as dependências de tokenização. Não há treinamento de novos pesos nos scripts.
+
+\textbf{linkify-it-py} localiza links; \textbf{phonenumbers} reconhece padrões de telefonia; \textbf{regex} permite limites de palavras com propriedades Unicode; \textbf{language-tool-python} conecta o código ao LanguageTool local para revisar pt-BR. As bibliotecas padrão do Python organizam configurações, argumentos, arquivos e resultados.
+
+\subsection{NLI: a mensagem é comparada a uma hipótese}
+O SMS funciona como \textit{premissa}; a definição da feature funciona como \textit{hipótese}. Para pedido de senha, por exemplo, a hipótese afirma que o remetente pede ao destinatário que informe, envie ou digite sua senha. O modelo calcula três saídas: apoio, neutralidade e contradição.
+
+\begin{caixainfo}[Escore e limiar]
+Se $z_a$, $z_n$ e $z_c$ são os valores brutos para apoio, neutralidade e contradição, o escore usado é:
+\[
+ s = \frac{e^{z_a}}{e^{z_a}+e^{z_n}+e^{z_c}}.
+\]
+A decisão é 1 quando $s \geq \tau$ e 0 caso contrário. O limiar padrão é $\tau=0{,}70$. Ele é uma escolha inicial, não um valor calibrado em SMS reais. O escore não é probabilidade de golpe.
+\end{caixainfo}
+
+A neutralidade permanece no denominador. Assim, a ausência de contradição não basta para tornar uma hipótese positiva. A implementação usa \termotecnico{text-classification} com pares de texto, preservando as três saídas NLI. Ainda é uma aplicação \textit{zero-shot}: as categorias são descritas em texto, sem treinamento específico com exemplos rotulados dessas features.
+
+\begin{codigofonte}[Trecho de \_\allowbreak{}semantica.py: inferência dos pares]
+pares = [{"text": sms, "text_pair": h}
+         for h in hipoteses.values()]
+resultado = motor(
+    pares, top_k=None, function_to_apply="softmax",
+    truncation=False, batch_size=self.config.tamanho_lote
+)
+\end{codigofonte}
+
+\clearpage
+\subsection{Como os 19 módulos semânticos usam o mesmo motor}
+Cada módulo declara \termotecnico{HIPOTESE} e \termotecnico{EXPLICACAO}. A função \termotecnico{medir} obtém o classificador compartilhado e solicita a medida da feature pelo nome. \termotecnico{classificar} retorna apenas a chave \termotecnico{valor}. O código abaixo é o fluxo real de \termotecnico{solicita\_\allowbreak{}senha.py}; os demais módulos semânticos mudam o nome e a hipótese.
+
+\begin{codigofonte}[Estrutura compartilhada: pedido de senha]
+def medir(sms: str) -> dict:
+    from .classificador import obter_classificador
+    return obter_classificador().medir_feature(
+        'solicita_senha', sms
+    )
+
+def classificar(sms: str) -> int:
+    return medir(sms)["valor"]
+\end{codigofonte}
+
+O motor identifica o escore de apoio pelo nome \termotecnico{entailment}, porque as classes podem vir ordenadas pelo valor. Antes de inferir, verifica se o SMS com cada hipótese cabe no limite de tokens, adotando o menor valor entre o limite do tokenizador e 512. Exceder esse limite gera erro em vez de truncamento silencioso.
+
+\subsection{Fluxo da análise completa}
+\begin{enumerate}
+\item Validar o tipo do SMS e preparar os valores iniciais.
+\item Avaliar 18 hipóteses com a mensagem original, mantendo URLs úteis para interpretar pedidos de clique.
+\item Avaliar carga emocional separadamente, com URLs mascaradas por espaços.
+\item Extrair URLs e telefones, detectar PIX e consultar o corretor local.
+\item Aplicar limiares às features semânticas e converter as outras detecções em 0/1.
+\item Montar as 24 chaves na ordem definida em \termotecnico{NOMES} e, quando solicitado, acrescentar detalhes.
+\end{enumerate}
+
+\begin{caixadica}[Como ler as fichas de cada feature]
+As fichas seguintes mostram a definição pretendida, a hipótese exata e dois exemplos do arquivo de avaliação. \textbf{Esperado} é o rótulo de referência; \textbf{obtido} é a saída registrada do modelo. Um exemplo positivo esperado pode ter sido classificado como 0. Os escores são arredondados apenas para apresentação.
+\end{caixadica}

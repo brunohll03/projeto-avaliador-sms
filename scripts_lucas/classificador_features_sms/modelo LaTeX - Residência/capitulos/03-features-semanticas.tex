@@ -1,0 +1,357 @@
+\section{As 19 features semânticas}
+
+\subsection{Pedido de senha}
+
+\textbf{Arquivo:} \termotecnico{solicita\_\allowbreak{}senha.py}\par
+
+Detecta pedido de senha; menção a senha alterada e conselho para nunca compartilhar são controles negativos.
+
+\textbf{Hipótese:} O remetente pede que o destinatário informe, envie ou digite sua senha.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9950.} Para confirmar seu cadastro, informe sua senha de acesso no formulário abaixo.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0009.} Nunca compartilhe sua senha.\par
+
+\end{quote}
+
+\subsection{Pedido de código de autenticação}
+
+\textbf{Arquivo:} \termotecnico{solicita\_\allowbreak{}codigo\_\allowbreak{}autenticacao.py}\par
+
+Distingue autenticação de cupom, código de produto e CVV de cartão; informar um código ao usuário não é solicitar esse código.
+
+\textbf{Hipótese:} O remetente pede que o destinatário forneça um código de autenticação, token ou código recebido por SMS ou WhatsApp.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 0; escore 0,3395.} Digite aqui o código de 6 números que você recebeu por SMS para confirmar sua conta.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0013.} Um código será enviado por SMS.\par
+
+\end{quote}
+
+\subsection{Pedido de dados bancários}
+
+\textbf{Arquivo:} \termotecnico{solicita\_\allowbreak{}dados\_\allowbreak{}bancarios.py}\par
+
+Não confundir conta de e-mail nem simples aviso de depósito com pedido de dados bancários.
+
+\textbf{Hipótese:} O remetente solicita dados bancários do destinatário, como banco, agência ou número de conta bancária.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9987.} Para liberar seu benefício, informe o número do banco, agência e conta.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,1450.} Sua conta está ativa.\par
+
+\end{quote}
+
+\clearpage
+
+\subsection{Pedido de dados pessoais}
+
+\textbf{Arquivo:} \termotecnico{solicita\_\allowbreak{}dados\_\allowbreak{}pessoais.py}\par
+
+Exige intenção de solicitar; um aviso de CPF atualizado não basta.
+
+\textbf{Hipótese:} O remetente pede que o destinatário forneça dados pessoais, como CPF, RG, nome completo, endereço ou data de nascimento.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9979.} Para atualizar seu cadastro, informe seu CPF, nome completo e data de nascimento.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0044.} Seu CPF foi atualizado.\par
+
+\end{quote}
+
+\subsection{Pedido de dados do cartão}
+
+\textbf{Arquivo:} \termotecnico{solicita\_\allowbreak{}dados\_\allowbreak{}cartao.py}\par
+
+Dados de cartão são distintos de agência e conta bancária; pode coexistir com pedido de dados pessoais.
+
+\textbf{Hipótese:} O remetente solicita o número, a validade, o CVV ou outros dados do cartão do destinatário.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9961.} Para receber o reembolso, informe o número do cartão, validade e código de segurança.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0020.} Seu cartão chegou.\par
+
+\end{quote}
+
+\subsection{Atualização cadastral}
+
+\textbf{Arquivo:} \termotecnico{solicita\_\allowbreak{}atualizacao\_\allowbreak{}cadastro.py}\par
+
+Inclui finalidade de um comando de acesso. Informar que o cadastro está desatualizado não é necessariamente um pedido.
+
+\textbf{Hipótese:} O remetente pede que o destinatário atualize, confirme ou regularize seu cadastro ou seus dados cadastrais.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9739.} Seu cadastro está desatualizado. Acesse o link abaixo para confirmar seus dados.\par
+
+\textbf{Esperado 0; obtido 1; escore 0,9569.} Cadastro atualizado.\par
+
+\end{quote}
+
+\clearpage
+
+\subsection{Pedido de pagamento}
+
+\textbf{Arquivo:} \termotecnico{solicita\_\allowbreak{}pagamento.py}\par
+
+PIX recebido é comprovante; não deve ser confundido com pedido para pagar.
+
+\textbf{Hipótese:} O remetente pede que o destinatário faça um pagamento, depósito ou transferência de dinheiro.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,8956.} Para evitar o cancelamento do pedido, faça o pagamento de R\$ 29,90 ainda hoje.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0140.} O pagamento foi recebido.\par
+
+\end{quote}
+
+\subsection{Pedido de clique}
+
+\textbf{Arquivo:} \termotecnico{solicita\_\allowbreak{}clique.py}\par
+
+Ter URL não basta. Conselho para não clicar deve ser negativo.
+
+\textbf{Hipótese:} O remetente pede que o destinatário clique em um link ou botão, ou abra um endereço de internet.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 0; escore 0,3286.} Clique no link abaixo para atualizar seu cadastro imediatamente.\par
+
+\textbf{Esperado 0; obtido 1; escore 0,7891.} https://exemplo.com\par
+
+\end{quote}
+
+\subsection{Pedido de ligação}
+
+\textbf{Arquivo:} \termotecnico{solicita\_\allowbreak{}ligacao.py}\par
+
+Número de telefone isolado e comando para ligar um aparelho não equivalem a telefonar.
+
+\textbf{Hipótese:} O remetente pede que o destinatário faça uma ligação telefônica.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9988.} Para confirmar o cancelamento, ligue imediatamente para 0800 123 4567.\par
+
+\textbf{Esperado 0; obtido 1; escore 0,9883.} Telefone: (19) 99999-1234.\par
+
+\end{quote}
+
+\clearpage
+
+\subsection{Bloqueio de conta ou serviço}
+
+\textbf{Arquivo:} \termotecnico{menciona\_\allowbreak{}bloqueio\_\allowbreak{}conta.py}\par
+
+Detecta estado atual ou futuro. Bloqueio de rua e cancelamento de pedido não são o objeto desta feature.
+
+\textbf{Hipótese:} A mensagem afirma que a conta, cartão, cadastro, acesso ou serviço do destinatário está ou será bloqueado, suspenso ou cancelado.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9108.} Sua conta será bloqueada hoje caso você não confirme seus dados.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0002.} Sua conta não será bloqueada.\par
+
+\end{quote}
+
+\subsection{Carga emocional}
+
+\textbf{Arquivo:} \termotecnico{carga\_\allowbreak{}emocional.py}\par
+
+Escore semântico do texto inteiro. Não é proporção de palavras emocionais, intensidade psicológica nem apenas sentimento positivo ou negativo.
+
+\textbf{Hipótese:} A mensagem expressa ou tenta provocar emoções como medo, ansiedade, alegria, esperança, raiva ou surpresa.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão). Antes da inferência, URLs são mascaradas.
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 0; escore 0,1752.} URGENTE!!! Você pode perder todo o seu dinheiro! Resolva AGORA antes que seja tarde!!!\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0975.} Seu código é 123456.\par
+
+\end{quote}
+
+\textbf{Mudança de método:} o escore não é a proporção de palavras emocionais da versão anterior, nem uma medida psicológica de intensidade.
+
+\clearpage
+
+\subsection{Urgência}
+
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}urgencia.py}\par
+
+Distingue pressão temporal de uma simples data, como uma entrega que ocorreu hoje.
+
+\textbf{Hipótese:} A mensagem pressiona o destinatário a agir rapidamente ou dentro de um prazo muito curto.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 0; escore 0,5721.} Regularize sua conta imediatamente. Você tem somente até hoje.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0017.} Sua compra foi entregue hoje.\par
+
+\end{quote}
+
+\subsection{Ameaça condicionada}
+
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}ameaca.py}\par
+
+Exige consequência condicionada à ação ou omissão. Conta já bloqueada pode ser aviso sem ameaça.
+
+\textbf{Hipótese:} A mensagem ameaça uma consequência negativa para o destinatário caso ele não realize uma ação solicitada.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9773.} Caso você não atualize seus dados hoje, sua conta será bloqueada.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0011.} Sua conta está bloqueada.\par
+
+\end{quote}
+
+\subsection{Linguagem alarmista}
+
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}linguagem\_\allowbreak{}alarmista.py}\par
+
+Alarmismo não é sinônimo de prazo curto. Caixa alta e exclamações isoladas não definem a categoria.
+
+\textbf{Hipótese:} A mensagem usa um tom de alarme ou perigo para assustar ou causar preocupação no destinatário.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 0; escore 0,0158.} ALERTA MÁXIMO! Detectamos uma atividade suspeita em sua conta. Resolva imediatamente!\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0008.} Atualize imediatamente.\par
+
+\end{quote}
+
+\clearpage
+
+\subsection{Recompensa}
+
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}recompensa.py}\par
+
+Busca benefício oferecido ao destinatário; uma notícia sobre prêmio de outra pessoa é controle negativo.
+
+\textbf{Hipótese:} A mensagem afirma que o destinatário ganhou ou pode resgatar um prêmio, recompensa, brinde ou bônus.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9980.} Parabéns! Seu número foi sorteado e você ganhou um prêmio de R\$ 5.000. Clique aqui para resgatar.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,3583.} O prêmio foi entregue ao João.\par
+
+\end{quote}
+
+\subsection{Reembolso}
+
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}reembolso.py}\par
+
+Política geral de reembolso ou pedido negado não equivale a valor disponível.
+
+\textbf{Hipótese:} A mensagem informa que o destinatário tem reembolso, restituição ou devolução de dinheiro disponível para receber.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9954.} Identificamos um reembolso de R\$ 350,00 disponível para você. Clique aqui para receber.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0002.} O reembolso foi negado.\par
+
+\end{quote}
+
+\subsection{Vantagem inesperada}
+
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}vantagem\_\allowbreak{}inesperada.py}\par
+
+Infere indícios no texto; não conhece a expectativa real do destinatário. Salário habitual não é vantagem inesperada.
+
+\textbf{Hipótese:} A mensagem oferece ao destinatário um benefício inesperado, uma seleção especial ou uma vantagem extraordinária não solicitada.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9944.} Você foi selecionado para receber um benefício de R\$ 1.500 que já está disponível para saque.\par
+
+\textbf{Esperado 0; obtido 1; escore 0,8702.} Seu salário foi depositado.\par
+
+\end{quote}
+
+\clearpage
+
+\subsection{Oferta financeira}
+
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}oferta\_\allowbreak{}financeira.py}\par
+
+Distingue oferta comercial de simples comprovante ou aviso de parcela paga.
+
+\textbf{Hipótese:} A mensagem oferece crédito, empréstimo, financiamento ou oportunidade de investimento ao destinatário.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 1; escore 0,9949.} Seu crédito de R\$ 20.000 foi pré-aprovado. Clique aqui para contratar agora.\par
+
+\textbf{Esperado 0; obtido 1; escore 0,9118.} Seu dinheiro foi recebido.\par
+
+\end{quote}
+
+\subsection{Chamada à ação}
+
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}chamada\_\allowbreak{}acao.py}\par
+
+Categoria ampla que pode coexistir com clique, pagamento e envio de dados. Relato no passado e proibição não são pedidos afirmativos.
+
+\textbf{Hipótese:} O remetente solicita que o destinatário realize uma ação concreta.
+
+\textbf{Execução:} \termotecnico{medir(sms)} encaminha essa hipótese ao motor Transformers/PyTorch; \termotecnico{classificar(sms)} devolve 1 se o escore de apoio atingir o limiar (0,70 por padrão).
+
+\begin{quote}\small
+
+\textbf{Esperado 1; obtido 0; escore 0,0771.} Informe seu CPF e clique no botão abaixo para confirmar.\par
+
+\textbf{Esperado 0; obtido 0; escore 0,0035.} Nunca compartilhe sua senha.\par
+
+\end{quote}

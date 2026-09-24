@@ -1,0 +1,170 @@
+[
+  {
+    "feature": "solicita_senha",
+    "pagina_pdf": 2,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Uma confirmação de troca de senha ou orientação para não compartilhar não é solicitação."
+  },
+  {
+    "feature": "solicita_codigo_autenticacao",
+    "pagina_pdf": 3,
+    "decisao": "ajustado",
+    "revisao": "Acrescenta pedidos de código recebido/enviado por SMS ou WhatsApp; conserva exclusão de códigos de produto e cartão.",
+    "limite": "Código de produto ou cupom não conta; código de segurança do cartão pertence à feature de cartão."
+  },
+  {
+    "feature": "solicita_dados_bancarios",
+    "pagina_pdf": 4,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Conta ativa e conta de e-mail não são pedidos de dados bancários."
+  },
+  {
+    "feature": "solicita_dados_pessoais",
+    "pagina_pdf": 5,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "CPF apenas mencionado não basta. Listas e construções não previstas podem não ser reconhecidas."
+  },
+  {
+    "feature": "solicita_dados_cartao",
+    "pagina_pdf": 6,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Aviso de entrega do cartão não é solicitação; pedido de agência não pertence a esta feature."
+  },
+  {
+    "feature": "solicita_atualizacao_cadastro",
+    "pagina_pdf": 7,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Cadastro desatualizado é um estado; sem pedido não ativa esta feature."
+  },
+  {
+    "feature": "solicita_pagamento",
+    "pagina_pdf": 8,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Recebemos seu PIX é confirmação, não pedido; PIX e pagamento são features diferentes."
+  },
+  {
+    "feature": "solicita_clique",
+    "pagina_pdf": 9,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Link sozinho não ativa a feature; não clique também não. Acesso sem destino explícito é tratado conservadoramente."
+  },
+  {
+    "feature": "solicita_ligacao",
+    "pagina_pdf": 10,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Número de telefone sozinho e contato por e-mail não são pedido de ligação."
+  },
+  {
+    "feature": "menciona_bloqueio_conta",
+    "pagina_pdf": 11,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Bloqueio de rua ou cancelamento de pedido não contam; negação explícita de bloqueio é excluída nesta operacionalização."
+  },
+  {
+    "feature": "carga_emocional",
+    "pagina_pdf": 12,
+    "decisao": "ajustado",
+    "revisao": "Preserva proporção lexical e cria baixa/média/alta pelos tercis positivos congelados, sem usar as categorias anotadas.",
+    "limite": "Não é probabilidade de golpe nem análise de sentimento contextual. O léxico pequeno perde sinônimos e não interpreta ironia/negação. Baixo/Médio/Alto do CSV não têm limiares documentados."
+  },
+  {
+    "feature": "possui_urgencia",
+    "pagina_pdf": 13,
+    "decisao": "ajustado",
+    "revisao": "Acrescenta prazos curtos por extenso (uma, duas, três, quatro, seis, doze e vinte e quatro horas); mantém exigência de ação e exclusão de relatos.",
+    "limite": "Compra entregue hoje é relato. Uma data passada não implica urgência; datas livres e prazos escritos por extenso têm cobertura limitada."
+  },
+  {
+    "feature": "possui_ameaca",
+    "pagina_pdf": 14,
+    "decisao": "ajustado",
+    "revisao": "Amplia consequências explícitas com protesto e negativação, mantendo a exigência de condição e exclusão de garantias negativas.",
+    "limite": "Sua conta está bloqueada não contém por si só condição. Condicionais longas ou implícitas exigem revisão humana."
+  },
+  {
+    "feature": "possui_linguagem_alarmista",
+    "pagina_pdf": 15,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Maiúsculas, exclamações e imediatamente sozinhos não bastam. Atenção também pode ser um aviso legítimo."
+  },
+  {
+    "feature": "possui_recompensa",
+    "pagina_pdf": 16,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Um prêmio entregue a outra pessoa ou um sorteio não ganho não contam."
+  },
+  {
+    "feature": "possui_reembolso",
+    "pagina_pdf": 17,
+    "decisao": "ajustado",
+    "revisao": "Exige devolução/restituição/estorno; crédito disponível isolado deixa de ser reembolso. Aceita estorno liberado.",
+    "limite": "Política de reembolso, reembolso negado e oferta de empréstimo não são devoluções."
+  },
+  {
+    "feature": "possui_vantagem_inesperada",
+    "pagina_pdf": 18,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "A expectativa real da pessoa é desconhecida. É uma aproximação textual com sobreposição a recompensa e oferta."
+  },
+  {
+    "feature": "possui_oferta_financeira",
+    "pagina_pdf": 19,
+    "decisao": "ajustado",
+    "revisao": "Reconhece produto financeiro pré-aprovado com espaço/hífen e sem possessivo, mantendo exclusão de simples preço.",
+    "limite": "Preço de pacote de internet ou mercadoria não é automaticamente oferta financeira. Alguns rótulos originais podem seguir interpretação mais ampla."
+  },
+  {
+    "feature": "possui_url",
+    "pagina_pdf": 20,
+    "decisao": "ajustado",
+    "revisao": "Usa extrator linkify-it-py com validação estrutural do host; mantém presença separada de solicitação de clique.",
+    "limite": "E-mail isolado não conta. Não abre o link nem avalia reputação; novas terminações de domínio podem escapar."
+  },
+  {
+    "feature": "possui_url_encurtada",
+    "pagina_pdf": 21,
+    "decisao": "ajustado",
+    "revisao": "Usa o mesmo extrator de URL e comparação exata com lista fixa de cinco domínios, sem confundir caminho ou subdomínio.",
+    "limite": "URL curta não significa encurtador. bit.ly.exemplo.com não é bit.ly. A lista limitada não cobre todos os serviços existentes."
+  },
+  {
+    "feature": "possui_telefone",
+    "pagina_pdf": 22,
+    "decisao": "ajustado",
+    "revisao": "Exige validade BR e mascara identificadores, inclusive código de autenticação/verificação/acesso/segurança; rejeita +44.",
+    "limite": "Validade estrutural não confirma linha ativa. Identificadores sem rótulo e alguns formatos ambíguos podem causar erros."
+  },
+  {
+    "feature": "possui_pix",
+    "pagina_pdf": 23,
+    "decisao": "ajustado",
+    "revisao": "Detecta palavra PIX com limites Unicode fora de URLs; continua positiva em negações que mencionam o sistema.",
+    "limite": "Chave numérica sozinha não basta. Não faça PIX ainda menciona o sistema; pixel, Pixar e domínio com pix não contam."
+  },
+  {
+    "feature": "possui_erros_ortografia_gramatica",
+    "pagina_pdf": 24,
+    "decisao": "ajustado",
+    "revisao": "Combina LanguageTool local filtrado com regras manuais já conhecidas; expõe alertas aceitos/ignorados, sem fallback silencioso.",
+    "limite": "Não pune automaticamente emoji ou falta de pontuação. Nomes/marcas podem gerar falsos positivos. Contagem é de alertas, não necessariamente palavras distintas."
+  },
+  {
+    "feature": "possui_chamada_acao",
+    "pagina_pdf": 25,
+    "decisao": "arquivo específico preservado",
+    "revisao": "Regra específica mantida: a condição central e as exclusões examinadas correspondem ao dicionário; continua uma heurística com cobertura limitada.",
+    "limite": "Relatos no passado e orientações negativas não contam. Discurso citado, ironia e escopos longos de negação têm cobertura limitada."
+  }
+]

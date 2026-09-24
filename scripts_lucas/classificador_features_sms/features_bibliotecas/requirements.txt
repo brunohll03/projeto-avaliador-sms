@@ -1,0 +1,8 @@
+# Python 3.10+; Java 17+ para o servidor local LanguageTool.
+transformers>=4.48,<5
+torch>=2.6,<3
+sentencepiece>=0.2,<1
+linkify-it-py>=2,<3
+phonenumbers>=9,<10
+regex>=2024.11
+language-tool-python>=3.4,<4

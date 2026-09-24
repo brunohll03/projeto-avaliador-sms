@@ -1,0 +1,10 @@
+{
+  "testes_sinteticos": 144,
+  "casos_auditoria": 187,
+  "testes_unitarios": 13,
+  "regressao_legada_incluida": 117,
+  "fonte_preservada": true,
+  "gabarito_preservado": true,
+  "notebook_auditoria": "4 células executadas em ordem via IPython no mesmo processo; sem kernel separado",
+  "painel": "regenerado; não inspecionado visualmente no navegador"
+}

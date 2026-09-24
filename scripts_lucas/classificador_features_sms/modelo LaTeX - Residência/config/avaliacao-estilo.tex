@@ -1,0 +1,450 @@
+% Fontes locais no macOS e alternativas disponíveis no Overleaf.
+
+
+
+\IfFontExistsTF{Arial}{
+  \setmainfont{Arial}
+  \setsansfont{Arial}
+}{
+  \setmainfont{TeX Gyre Heros}
+  \setsansfont{TeX Gyre Heros}
+}
+\IfFontExistsTF{Menlo}{
+  \setmonofont[Scale=0.86]{Menlo}
+}{
+  \setmonofont[Scale=0.86]{DejaVu Sans Mono}
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=CorInstitucional,
+  urlcolor=CorInstitucional,
+  pdftitle={\TituloAvaliacao},
+  pdfsubject={Modelo reutilizável de prova e gabarito},
+  pdfauthor={\ElaboradorAvaliacao}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\setlength{\arrayrulewidth}{0.75pt}
+\setlist{nosep,leftmargin=1.6em}
+\raggedbottom
+
+% ----------------------------------------------------------------
+% Rodapés
+% ----------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\sffamily\RodapeProva}
+\fancyfoot[R]{\footnotesize\sffamily Página \thepage}
+
+\newcommand{\usarRodapeProva}{%
+  \fancyfoot[L]{\footnotesize\sffamily\RodapeProva}%
+}
+
+\newcommand{\usarRodapeGabarito}{%
+  \fancyfoot[L]{\footnotesize\sffamily\RodapeGabarito}%
+}
+
+% ----------------------------------------------------------------
+% Elementos do cabeçalho institucional
+% ----------------------------------------------------------------
+\newcommand{\logoavaliacao}{%
+  \IfFileExists{\CaminhoLogoAvaliacaoPrincipal}{%
+    \begin{minipage}{0.92\linewidth}
+      \centering
+      \includegraphics[width=0.96\linewidth,height=11mm,keepaspectratio]{\CaminhoLogoAvaliacaoPrincipal}\\[1.5mm]
+      \IfFileExists{\CaminhoLogoAvaliacaoSecundario}{%
+        \includegraphics[width=0.78\linewidth,height=9mm,keepaspectratio]{\CaminhoLogoAvaliacaoSecundario}%
+      }{}%
+    \end{minipage}%
+  }{%
+    \begingroup
+    \setlength{\fboxsep}{4mm}%
+    \colorbox{CorInstitucional!10}{\sffamily\bfseries\color{CorInstitucional}\MarcaAlternativaAvaliacao}%
+    \endgroup
+  }%
+}
+
+\newcommand{\campocabecalho}[2]{%
+  \sffamily\textbf{#1}%
+  \if\relax\detokenize{#2}\relax
+  \else
+    \newline\vspace{0.7mm}{\normalfont #2}%
+  \fi
+}
+
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell} % Adicione este pacote no seu pré-ambulo para linhas mais espessas
+
+
+\newcommand{\cabecalhoprova}{%
+  \begingroup
+  \setlength{\tabcolsep}{2mm}%
+  \setlength{\arrayrulewidth}{1pt}%
+  \renewcommand{\arraystretch}{1.25}%
+  
+  \setlength{\fboxrule}{2.5pt}%
+  \setlength{\fboxsep}{0pt}%
+  \fbox{%
+    \begin{tcolorbox}[
+      enhanced,
+      sidebyside,
+      sidebyside align=center,
+      lefthand width=0.22\textwidth,
+      sidebyside gap=0pt,
+      valign=center,
+      halign=center,
+      boxrule=0pt,
+      frame hidden,
+      arc=0pt,
+      colback=white,
+      boxsep=0pt, % Zera o espaçamento interno do tcolorbox
+      top=0pt, bottom=0pt, left=0pt, right=0pt,
+      segmentation code={
+        \draw[black, line width=1pt] 
+          (segmentation.north) -- (segmentation.south);
+      }
+    ]
+      % LADO ESQUERDO: Logo
+      \logoavaliacao
+      
+      \tcblower
+      
+      % LADO DIREITO: Dados da avaliação
+      \setlength{\tabcolsep}{2mm}%
+      \setlength{\arrayrulewidth}{1pt}%
+      \renewcommand{\arraystretch}{1.25}%
+      \begin{tabularx}{\linewidth}{p{0.18\linewidth}|p{0.10\linewidth}|X|p{0.16\linewidth}|p{0.18\linewidth}}
+        % Sem \hline no topo: a borda do \fbox já faz o fechamento superior
+        \multicolumn{3}{l|}{\rule{0pt}{7mm}\campocabecalho{Nome:}{}} &
+        \multicolumn{2}{l}{\campocabecalho{RA:}{}} \\
+        
+        \hline
+        
+        \campocabecalho{Data:}{\DataAvaliacao} &
+        \campocabecalho{Turma:}{\TurmaAvaliacao} &
+        \campocabecalho{Disciplina:}{\DisciplinaAvaliacao} &
+        \campocabecalho{Docente:}{\DocenteAvaliacao} &
+        \campocabecalho{Elaborador:}{\ElaboradorAvaliacao} \\
+        
+        \hline
+        
+        \multicolumn{5}{c}{\rule{0pt}{5.5mm}\sffamily\bfseries\Large\TituloAvaliacao \rule[-2.5mm]{0pt}{0pt}}
+      \end{tabularx}%
+    \end{tcolorbox}%
+  }%
+  \endgroup
+}
+
+\newcommand{\cabecalhogabarito}{%
+  \begingroup
+  \setlength{\tabcolsep}{2mm}%
+  \setlength{\arrayrulewidth}{1pt}%
+  \renewcommand{\arraystretch}{1.25}%
+  
+  \setlength{\fboxrule}{2.5pt}%
+  \setlength{\fboxsep}{0pt}%
+  \fbox{%
+    \begin{tcolorbox}[
+      enhanced,
+      sidebyside,
+      sidebyside align=center,
+      lefthand width=0.22\textwidth,
+      sidebyside gap=0pt,
+      valign=center,
+      halign=center,
+      boxrule=0pt,
+      frame hidden,
+      arc=0pt,
+      colback=white,
+      boxsep=0pt, % Elimina folgas internas e linhas duplas nas bordas
+      top=0pt, bottom=0pt, left=0pt, right=0pt,
+      segmentation code={
+        \draw[black, line width=1pt] 
+          (segmentation.north) -- (segmentation.south);
+      }
+    ]
+      % LADO ESQUERDO: Logo centralizada automaticamente no eixo vertical
+      \logoavaliacao
+      
+      \tcblower
+      
+      % LADO DIREITO: Tabela do Gabarito
+      \setlength{\tabcolsep}{2mm}%
+      \setlength{\arrayrulewidth}{1pt}%
+      \renewcommand{\arraystretch}{1.25}%
+      \begin{tabularx}{\linewidth}{p{0.13\linewidth}|p{0.08\linewidth}|X|p{0.14\linewidth}|p{0.13\linewidth}}
+        % Faixa superior destacada do GABARITO
+        \multicolumn{5}{>{\columncolor{CorGabarito}}c}{\rule{0pt}{8mm}\sffamily\bfseries\fontsize{24}{28}\selectfont GABARITO \rule[-3mm]{0pt}{0pt}} \\
+        
+        \hline
+        
+        % Linha de informações intermediárias
+        \campocabecalho{Semestre:}{\SemestreAvaliacao} &
+        \campocabecalho{Turma:}{\TurmaAvaliacao} &
+        \campocabecalho{Docente:}{\DocenteAvaliacao} &
+        \campocabecalho{Disciplina:}{\DisciplinaAvaliacao} &
+        \campocabecalho{Monitor:}{\MonitorAvaliacao} \\
+        
+        \hline
+        
+        % Título da avaliação
+        \multicolumn{5}{c}{\rule{0pt}{5.5mm}\sffamily\bfseries\Large\TituloAvaliacao \rule[-2.5mm]{0pt}{0pt}}
+      \end{tabularx}%
+    \end{tcolorbox}%
+  }%
+  \endgroup
+}
+% ----------------------------------------------------------------
+% Questões, alternativas e espaços de resposta
+% ----------------------------------------------------------------
+\newcounter{questao}
+\newcounter{respostagabarito}
+
+\newcommand{\pontuacao}[1]{%
+  \if\relax\detokenize{#1}\relax\else\textbf{\textit{(#1)}}\fi
+}
+
+% Uso: \questao{1,0}{Enunciado} ou \questao{}{Enunciado sem nota}.
+\newcommand{\questao}[2]{%
+  \refstepcounter{questao}%
+  \par\addvspace{0.85em}%
+  \noindent\sffamily\textbf{\thequestao)}\quad\pontuacao{#1}\quad
+  \normalfont\textit{#2}\par
+}
+
+% Uso: \subquestao{a}{0,75}{Texto da alternativa}.
+\newcommand{\subquestao}[3]{%
+  \par\addvspace{0.65em}%
+  \noindent\hspace*{8mm}\sffamily\textbf{#1)}\quad\pontuacao{#2}\quad
+  \normalfont #3\par
+}
+
+% Linhas abertas, úteis para respostas curtas.
+\newcommand{\linhasresposta}[1]{%
+  \par\begingroup
+  \setlength{\parskip}{0pt}%
+  \foreach \linha in {1,...,#1}{%
+    \vspace{4mm}\noindent\rule{\linewidth}{0.38pt}\par
+  }%
+  \endgroup
+}
+
+% Caixa pautada e quebrável entre páginas, útil para respostas longas.
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+\newcommand{\respostalinhas}[1]{%
+  \begin{tcolorbox}[
+    enhanced,
+    breakable,
+    colback=white,
+    frame hidden,
+    boxrule=0pt,
+    left=0mm, right=0mm, top=0mm, bottom=0mm,
+    before skip=0.8em, after skip=0.8em,
+    % 'overlay' aplica o desenho em todas as partes da caixa, quebrada ou não
+    overlay={
+      \begin{tcbclipinterior}
+        \foreach \i in {1,...,#1} {
+          \pgfmathsetmacro{\deslocamento}{\i * 22}
+          \draw[black!28, line width=0.4pt] 
+            ([yshift=-\deslocamento pt]frame.north west) -- 
+            ([yshift=-\deslocamento pt]frame.north east);
+        }
+      \end{tcbclipinterior}
+    }
+  ]
+  % Gera linhas com altura real para que o TeX saiba exatamente onde quebrar a página
+  \begingroup
+  \setlength{\parskip}{0pt}%
+  \foreach \n in {1,...,#1}{%
+    \strut\par\vspace{\dimexpr 22pt - \baselineskip\relax}%
+  }%
+  \endgroup
+  \end{tcolorbox}%
+}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\newcommand{\respostalinhacodigo}[1]{%
+  \begin{tcolorbox}[
+    enhanced,
+    breakable,
+    colback=white,
+    frame hidden,
+    boxrule=0pt,
+    left=12mm, right=0mm, top=0mm, bottom=0mm,
+    before skip=0.8em, after skip=0.8em,
+    overlay={
+      \begin{tcbclipinterior}
+        % Calha de numeração (fundo cinza)
+        \fill[black!4] (frame.north west) rectangle ([xshift=10mm]frame.south west);
+        \draw[black!18, line width=0.5pt] 
+          ([xshift=10mm]frame.north west) -- ([xshift=10mm]frame.south west);
+
+        % Linhas pautadas horizontais
+        \foreach \i in {1,...,#1} {
+          \pgfmathsetmacro{\deslocamento}{\i * 22}
+          \draw[black!20, line width=0.4pt] 
+            ([yshift=-\deslocamento pt, xshift=10mm]frame.north west) -- 
+            ([yshift=-\deslocamento pt]frame.north east);
+        }
+      \end{tcbclipinterior}
+    }
+  ]
+  % Numeração sequencial com margem interna ajustada mais para a esquerda
+  \begingroup
+  \setlength{\parskip}{0pt}%
+  \foreach \n in {1,...,#1}{%
+    \noindent\hspace{-12mm}%
+    \makebox[7.5mm][r]{\ttfamily\small\color{black!45}\n}\hspace{4.5mm}%
+    \strut\par\vspace{\dimexpr 22pt - \baselineskip\relax}%
+  }%
+  \endgroup
+  \end{tcolorbox}%
+}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\newcommand{\caixalivre}[2]{%
+  \begin{tcolorbox}[
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=black!50, % Borda de tom neutro/sutil
+    boxrule=0.6pt,
+    arc=2pt, % Cantos ligeiramente arredondados
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    before skip=0.8em, after skip=0.8em,
+    attach title to upper,
+    % Se um título for informado, formata no topo interno da caixa
+    fonttitle=\sffamily\small\bfseries\color{black!60},
+    title={#1\ifstrempty{#1}{}{\par\vspace{2mm}}}
+  ]
+  % Define a altura do bloco com base na quantidade de linhas desejada
+  \vspace{\dimexpr 22pt * #2 - 2mm\relax}%
+  \end{tcolorbox}%
+}
+
+\newcommand{\caixavf}[1]{%
+  \begingroup
+  \setlength{\tabcolsep}{3mm}%
+  \renewcommand{\arraystretch}{1.3}%
+  \begin{tabularx}{\textwidth}{c|X}
+    \textbf{( V / F )} & \textbf{Afirmativa} \\ \hline
+    #1
+  \end{tabularx}
+  \endgroup
+}
+% Uso:
+% \caixavf{
+%   [ \quad ] & O modelo em cascata é iterativo por definição. \\ \hline
+%   [ \quad ] & O Scrum utiliza sprints de duração fixa.
+% }
+
+\newcommand{\caixarelacionar}[2]{%
+  \begingroup
+  \vspace{2mm}
+  \noindent
+  % Coluna A
+  \begin{minipage}[t]{0.47\textwidth}
+    \textbf{Coluna A}\\[1mm]
+    \rule{\linewidth}{0.6pt}\\[2mm]
+    \renewcommand{\arraystretch}{1.3}%
+    \begin{tabular}{@{}l p{0.8\linewidth}@{}}
+      #1
+    \end{tabular}
+  \end{minipage}%
+  \hfill
+  % Coluna B
+  \begin{minipage}[t]{0.47\textwidth}
+    \textbf{Coluna B}\\[1mm]
+    \rule{\linewidth}{0.6pt}\\[2mm]
+    \renewcommand{\arraystretch}{1.3}%
+    \begin{tabular}{@{}l p{0.8\linewidth}@{}}
+      #2
+    \end{tabular}
+  \end{minipage}
+  \vspace{2mm}
+  \endgroup
+}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings, skins}
+
+\newtcblisting{codigolacuna}[1][]{%
+  enhanced,
+  colback=black!2,
+  colframe=black!40,
+  boxrule=0.5pt,
+  arc=2pt,
+  left=4mm, right=4mm, top=2mm, bottom=2mm,
+  fontupper=\ttfamily\small,
+  listing only,
+  before skip=0.8em, after skip=0.8em,
+  #1
+}
+
+% Macro auxiliar para desenhar a lacuna/traço no meio do código
+\newcommand{\lacuna}[1][3cm]{\underline{\hspace{#1}}}
+
+% Espaço em branco com altura livre: \espacoresposta{25mm}.
+\newcommand{\espacoresposta}[1]{\par\vspace{#1}}
+
+% Bloco de código neutro para questões técnicas.
+\lstdefinestyle{codigoavaliacao}{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries\color{CorInstitucional},
+  commentstyle=\itshape\color{green!45!black},
+  stringstyle=\color{red!65!black},
+  numbers=left,
+  numberstyle=\scriptsize\color{CorTextoAuxiliar},
+  numbersep=8pt,
+  showstringspaces=false,
+  keepspaces=true,
+  columns=fullflexible,
+  breaklines=true,
+  tabsize=2,
+  upquote=true
+}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings, skins, breakable}
+
+\newtcblisting{codigoquestao}[1][]{%
+  enhanced,
+  breakable,
+  listing only,
+  listing engine=listings,
+  colback=CorCodigoAvaliacao, % Mantém sua cor de fundo original
+  colframe=black!45,          % Borda neutra e elegante
+  boxrule=0.5pt,
+  arc=1.5mm,
+  left=1mm, right=1.5mm, top=1.5mm, bottom=1.5mm,
+  before skip=0.8em, after skip=0.85em,
+  listing options={
+    style=codigoavaliacao,
+    numbers=left,                   % Ativa a numeração na esquerda
+    numberstyle=\tiny\color{black!50}\ttfamily, % Estilo sutil do número
+    numbersep=8pt,                  % Distância entre o número e o código
+    firstnumber=1,
+    stepnumber=1,
+    #1                              % Permite passar parâmetros (ex: language=C)
+  }
+}
+
+% Resposta numerada do gabarito. O segundo argumento pode ficar vazio.
+\newcommand{\respostagabarito}[2][10mm]{%
+  \refstepcounter{respostagabarito}%
+  \par\addvspace{0.55em}%
+  \noindent\sffamily\textbf{\therespostagabarito)}\quad\normalfont #2\par
+  \vspace{#1}%
+}

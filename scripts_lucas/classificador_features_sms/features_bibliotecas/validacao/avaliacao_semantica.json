@@ -1,0 +1,314 @@
+{
+  "aviso": "Exemplos didáticos; não é avaliação de generalização.",
+  "modelo": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+  "revisao": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+  "limiar": 0.7,
+  "total": 38,
+  "acertos": 27,
+  "resultados": [
+    {
+      "feature": "solicita_senha",
+      "sms": "Para confirmar seu cadastro, informe sua senha de acesso no formulário abaixo.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9950190782546997,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_senha",
+      "sms": "Nunca compartilhe sua senha.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.0008669846574775875,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_codigo_autenticacao",
+      "sms": "Digite aqui o código de 6 números que você recebeu por SMS para confirmar sua conta.",
+      "esperado": 1,
+      "observado": 0,
+      "escore": 0.33951544761657715,
+      "acertou": false
+    },
+    {
+      "feature": "solicita_codigo_autenticacao",
+      "sms": "Um código será enviado por SMS.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.001281700562685728,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_dados_bancarios",
+      "sms": "Para liberar seu benefício, informe o número do banco, agência e conta.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9986910223960876,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_dados_bancarios",
+      "sms": "Sua conta está ativa.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.14500899612903595,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_dados_pessoais",
+      "sms": "Para atualizar seu cadastro, informe seu CPF, nome completo e data de nascimento.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9978533387184143,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_dados_pessoais",
+      "sms": "Seu CPF foi atualizado.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.004411793313920498,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_dados_cartao",
+      "sms": "Para receber o reembolso, informe o número do cartão, validade e código de segurança.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9961482286453247,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_dados_cartao",
+      "sms": "Seu cartão chegou.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.001953262835741043,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_atualizacao_cadastro",
+      "sms": "Seu cadastro está desatualizado. Acesse o link abaixo para confirmar seus dados.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9739134907722473,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_atualizacao_cadastro",
+      "sms": "Cadastro atualizado.",
+      "esperado": 0,
+      "observado": 1,
+      "escore": 0.9569320678710938,
+      "acertou": false
+    },
+    {
+      "feature": "solicita_pagamento",
+      "sms": "Para evitar o cancelamento do pedido, faça o pagamento de R$ 29,90 ainda hoje.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.8956151008605957,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_pagamento",
+      "sms": "O pagamento foi recebido.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.014033994637429714,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_clique",
+      "sms": "Clique no link abaixo para atualizar seu cadastro imediatamente.",
+      "esperado": 1,
+      "observado": 0,
+      "escore": 0.32855892181396484,
+      "acertou": false
+    },
+    {
+      "feature": "solicita_clique",
+      "sms": "https://exemplo.com",
+      "esperado": 0,
+      "observado": 1,
+      "escore": 0.7890781164169312,
+      "acertou": false
+    },
+    {
+      "feature": "solicita_ligacao",
+      "sms": "Para confirmar o cancelamento, ligue imediatamente para 0800 123 4567.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9988034963607788,
+      "acertou": true
+    },
+    {
+      "feature": "solicita_ligacao",
+      "sms": "Telefone: (19) 99999-1234.",
+      "esperado": 0,
+      "observado": 1,
+      "escore": 0.9882977604866028,
+      "acertou": false
+    },
+    {
+      "feature": "menciona_bloqueio_conta",
+      "sms": "Sua conta será bloqueada hoje caso você não confirme seus dados.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.910799503326416,
+      "acertou": true
+    },
+    {
+      "feature": "menciona_bloqueio_conta",
+      "sms": "Sua conta não será bloqueada.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.00021502921299543232,
+      "acertou": true
+    },
+    {
+      "feature": "carga_emocional",
+      "sms": "URGENTE!!! Você pode perder todo o seu dinheiro! Resolva AGORA antes que seja tarde!!!",
+      "esperado": 1,
+      "observado": 0,
+      "escore": 0.17524608969688416,
+      "acertou": false
+    },
+    {
+      "feature": "carga_emocional",
+      "sms": "Seu código é 123456.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.09751459956169128,
+      "acertou": true
+    },
+    {
+      "feature": "possui_urgencia",
+      "sms": "Regularize sua conta imediatamente. Você tem somente até hoje.",
+      "esperado": 1,
+      "observado": 0,
+      "escore": 0.5720888376235962,
+      "acertou": false
+    },
+    {
+      "feature": "possui_urgencia",
+      "sms": "Sua compra foi entregue hoje.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.0017081719124689698,
+      "acertou": true
+    },
+    {
+      "feature": "possui_ameaca",
+      "sms": "Caso você não atualize seus dados hoje, sua conta será bloqueada.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9773419499397278,
+      "acertou": true
+    },
+    {
+      "feature": "possui_ameaca",
+      "sms": "Sua conta está bloqueada.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.001096266321837902,
+      "acertou": true
+    },
+    {
+      "feature": "possui_linguagem_alarmista",
+      "sms": "ALERTA MÁXIMO! Detectamos uma atividade suspeita em sua conta. Resolva imediatamente!",
+      "esperado": 1,
+      "observado": 0,
+      "escore": 0.015813905745744705,
+      "acertou": false
+    },
+    {
+      "feature": "possui_linguagem_alarmista",
+      "sms": "Atualize imediatamente.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.0008181239245459437,
+      "acertou": true
+    },
+    {
+      "feature": "possui_recompensa",
+      "sms": "Parabéns! Seu número foi sorteado e você ganhou um prêmio de R$ 5.000. Clique aqui para resgatar.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9979789853096008,
+      "acertou": true
+    },
+    {
+      "feature": "possui_recompensa",
+      "sms": "O prêmio foi entregue ao João.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.35825636982917786,
+      "acertou": true
+    },
+    {
+      "feature": "possui_reembolso",
+      "sms": "Identificamos um reembolso de R$ 350,00 disponível para você. Clique aqui para receber.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9954410791397095,
+      "acertou": true
+    },
+    {
+      "feature": "possui_reembolso",
+      "sms": "O reembolso foi negado.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.00023321226763073355,
+      "acertou": true
+    },
+    {
+      "feature": "possui_vantagem_inesperada",
+      "sms": "Você foi selecionado para receber um benefício de R$ 1.500 que já está disponível para saque.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9944249391555786,
+      "acertou": true
+    },
+    {
+      "feature": "possui_vantagem_inesperada",
+      "sms": "Seu salário foi depositado.",
+      "esperado": 0,
+      "observado": 1,
+      "escore": 0.8702296018600464,
+      "acertou": false
+    },
+    {
+      "feature": "possui_oferta_financeira",
+      "sms": "Seu crédito de R$ 20.000 foi pré-aprovado. Clique aqui para contratar agora.",
+      "esperado": 1,
+      "observado": 1,
+      "escore": 0.9949371814727783,
+      "acertou": true
+    },
+    {
+      "feature": "possui_oferta_financeira",
+      "sms": "Seu dinheiro foi recebido.",
+      "esperado": 0,
+      "observado": 1,
+      "escore": 0.9118122458457947,
+      "acertou": false
+    },
+    {
+      "feature": "possui_chamada_acao",
+      "sms": "Informe seu CPF e clique no botão abaixo para confirmar.",
+      "esperado": 1,
+      "observado": 0,
+      "escore": 0.07711835950613022,
+      "acertou": false
+    },
+    {
+      "feature": "possui_chamada_acao",
+      "sms": "Nunca compartilhe sua senha.",
+      "esperado": 0,
+      "observado": 0,
+      "escore": 0.0034898126032203436,
+      "acertou": true
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""Preenche as features de cada SMS em um CSV usando as regras locais."""
+"""Preenche as features de cada SMS em um CSV usando regras ou bibliotecas."""
 
 import argparse
 from contextlib import contextmanager
@@ -16,16 +16,26 @@ else:
 
 
 @contextmanager
-def abrir_classificador(metodo):
-    """Disponibiliza o classificador de regras, sem dependências externas."""
+def abrir_classificador(metodo, limiar=0.70, somente_local=False):
+    """Mantém o modelo e o corretor abertos durante todo o processamento."""
     if metodo == "regras":
         nomes = tuple(modulo.__name__.rsplit(".", 1)[-1] for modulo in MODULOS)
         yield nomes, classificar_sms
+    elif metodo == "bibliotecas":
+        from classificador_features_sms.features_bibliotecas import (
+            ClassificadorFeatures, Configuracao,
+        )
+        from classificador_features_sms.features_bibliotecas.classificador import NOMES
+
+        config = Configuracao(limiar=limiar, somente_local=somente_local)
+        with ClassificadorFeatures(config) as classificador:
+            yield NOMES, classificador.classificar_sms
     else:
         raise ValueError(f"Método desconhecido: {metodo}")
 
 
-def preencher_csv(entrada, saida=None, *, metodo="regras"):
+def preencher_csv(entrada, saida=None, *, metodo="regras", limiar=0.70,
+                  somente_local=False):
     """Preserva dados e cabeçalhos; substitui a saída somente após concluir."""
     entrada = Path(entrada).resolve()
     saida = Path(saida).resolve() if saida is not None else entrada
@@ -53,7 +63,7 @@ def preencher_csv(entrada, saida=None, *, metodo="regras"):
 
     temporario = None
     try:
-        with abrir_classificador(metodo) as (nomes, classificar):
+        with abrir_classificador(metodo, limiar, somente_local) as (nomes, classificar):
             colunas_saida = colunas + [nome for nome in nomes if nome not in colunas]
             with tempfile.NamedTemporaryFile(
                 mode="w", encoding="utf-8-sig" if tem_bom else "utf-8", newline="",
@@ -98,10 +108,17 @@ def main():
                     "Por padrão, atualiza o próprio arquivo após concluir.",
     )
     parser.add_argument("csv", type=Path, help="CSV UTF-8 com a coluna Mensagem.")
+    parser.add_argument("--metodo", choices=("regras", "bibliotecas"), default="regras",
+                        help="regras usa features/ (padrão); bibliotecas usa features_bibliotecas/.")
     parser.add_argument("--saida", type=Path, help="Salva em outro CSV, preservando a entrada.")
+    parser.add_argument("--limiar", type=float, default=0.70,
+                        help="Limiar semântico da versão bibliotecas (padrão: 0.70).")
+    parser.add_argument("--somente-local", action="store_true",
+                        help="Na versão bibliotecas, usa o modelo NLI já baixado no cache.")
     args = parser.parse_args()
     try:
-        total = preencher_csv(args.csv, args.saida)
+        total = preencher_csv(args.csv, args.saida, metodo=args.metodo,
+                              limiar=args.limiar, somente_local=args.somente_local)
     except (OSError, ValueError, RuntimeError, ImportError, csv.Error) as exc:
         parser.exit(1, f"Erro: {exc}\nO arquivo de saída não foi substituído.\n")
     except KeyboardInterrupt:

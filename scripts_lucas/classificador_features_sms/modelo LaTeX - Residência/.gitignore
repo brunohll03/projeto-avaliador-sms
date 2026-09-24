@@ -1,0 +1,12 @@
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.listing
+*.out
+*.synctex.gz
+*.toc
+*.xdv
+main.pdf
+prova.pdf
+gabarito.pdf

@@ -1,0 +1,30 @@
+\section{Objetivo e mapa de leitura}
+Este documento explica a implementação de \termotecnico{features\_\allowbreak{}bibliotecas}, localizada ao lado deste projeto LaTeX. O código recebe uma mensagem em português e produz 24 características, chamadas \textit{features}, representadas por 0 ou 1. A documentação foi elaborada em 15 de setembro de 2026 a partir dos scripts e dos registros de validação de 14 de setembro de 2026.
+
+Uma feature transforma um aspecto do texto em uma informação que outro programa pode usar. A presença de um telefone é estrutural; um pedido de ligação depende do sentido da mensagem. Por isso, cada tipo de característica exige um método adequado.
+
+\begin{caixainfo}[O que a saída significa]
+\textbf{1}: a característica foi detectada pelo método adotado.\par
+\textbf{0}: a característica não foi detectada.\par
+Esses valores não classificam a mensagem como golpe ou legítima. Uma mensagem pode ter várias features positivas ao mesmo tempo.
+\end{caixainfo}
+
+\subsection{Organização dos scripts}
+\begin{tabularx}{\linewidth}{@{}p{0.28\linewidth}X@{}}
+\toprule
+\textbf{Grupo} & \textbf{Responsabilidade} \\
+\midrule
+19 features semânticas & Comparam o SMS com uma hipótese em linguagem natural, usando um único modelo NLI compartilhado. \\
+5 outras features & Detectam URLs, encurtadores, telefones, PIX e erros de escrita com bibliotecas específicas. \\
+10 módulos de apoio & Coordenam a análise, configuram dependências, executam a interface e verificam resultados. \\
+\bottomrule
+\end{tabularx}
+
+Cada arquivo de feature oferece \termotecnico{classificar(sms)}. As features semânticas também expõem \termotecnico{medir(sms)}, que retorna escore, limiar, hipótese e valor binário. As páginas seguintes descrevem o papel de cada arquivo; não é necessário copiar todo o código para compreender o fluxo.
+
+\subsection{Entrada, saída e ausência de dados}
+A entrada deve ser uma string. Números, listas e \termotecnico{None} geram erro de tipo. Uma mensagem vazia ou composta apenas por espaços retorna 24 zeros. Se o modelo ou o corretor não puderem ser carregados, a falha é informada; indisponibilidade não é interpretada como ausência da característica.
+
+\begin{caixaatencao}[Situação da versão documentada]
+A versão \termotecnico{2.0.0-bibliotecas} é experimental. O registro disponível contém 27 acertos em 38 exemplos semânticos didáticos. Os exemplos foram usados no desenvolvimento e na escolha do método: não constituem uma avaliação independente de generalização.
+\end{caixaatencao}
