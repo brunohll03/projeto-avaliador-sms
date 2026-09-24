@@ -1,0 +1,73 @@
+\section{As outras cinco features}
+\subsection{Presença de URL}
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}url.py}. A função \termotecnico{classificar} chama \termotecnico{extrair\_\allowbreak{}urls}, de \termotecnico{\_\allowbreak{}urls.py}, e devolve 1 se a lista não estiver vazia. A extração usa linkify-it-py; a verificação complementar de domínio e IP usa a biblioteca padrão.
+
+\begin{codigofonte}[Presença de um link reconhecido]
+def classificar(sms: str) -> int:
+    return int(bool(extrair_urls(sms)))
+\end{codigofonte}
+
+A implementação aceita HTTP(S), www, domínios sem esquema e links com duas barras iniciais. A string \termotecnico{https://exemplo.com} é um exemplo positivo; \termotecnico{pessoa@exemplo.com} é um controle negativo. A extração de e-mails aproximados é desativada. Não há consulta a DNS, reputação do site ou normalização de ofuscações como \termotecnico{hxxp} e \termotecnico{[.]}. Detectar URL não significa detectar pedido de clique.
+
+\subsection{URL de encurtador conhecido}
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}url\_\allowbreak{}encurtada.py}. A função \termotecnico{classificar} percorre as ocorrências extraídas e compara o domínio real com \termotecnico{ENCURTADORES}. A lista contém bit.ly, tinyurl.com, t.co, is.gd e ow.ly.
+
+\begin{codigofonte}[Comparação do domínio real]
+def classificar(sms: str) -> int:
+    return int(any(
+        m['dominio'] in ENCURTADORES
+        for m in ocorrencias(sms)
+    ))
+\end{codigofonte}
+
+\termotecnico{https://bit.ly/a} ativa a feature. Já \termotecnico{https://bit.ly.exemplo.com/a} não ativa: seu host não é bit.ly. Em \termotecnico{https://bit.ly@exemplo.com/a}, bit.ly ocupa o campo de usuário e o host é exemplo.com. O código não segue redirecionamentos nem conclui que uma URL é encurtada apenas por ser curta. Serviços fora da lista não são detectados.
+
+\clearpage
+\subsection{Presença de telefone}
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}telefone.py}. \termotecnico{extrair\_\allowbreak{}telefones} valida a entrada e mascara URLs. Em seguida, usa regex para mascarar CPF/CNPJ formatados, CEP, datas, valores e identificadores rotulados, como código ou protocolo. As máscaras substituem caracteres por espaços, preservando as posições.
+
+A extração final usa \termotecnico{PhoneNumberMatcher}, da biblioteca phonenumbers, com região padrão BR e nível \termotecnico{Leniency.VALID}. Os metadados da biblioteca verificam comprimentos e prefixos. Os trechos encontrados são recuperados na mensagem original pelos índices inicial e final. \termotecnico{classificar} retorna 1 quando a lista contém ao menos um número.
+
+\begin{codigofonte}[Extração após aplicar as máscaras]
+return [sms[m.start:m.end]
+        for m in phonenumbers.PhoneNumberMatcher(
+            texto, "BR",
+            leniency=phonenumbers.Leniency.VALID
+        )]
+\end{codigofonte}
+
+\textbf{Exemplos dos testes:} \termotecnico{(19) 99999-1234} e \termotecnico{+44 20 8366 1177} são reconhecidos; \termotecnico{CPF: 19999991234} é mascarado. Números internacionais explícitos são aceitos. Validade estrutural não confirma que a linha exista; um CPF sem pontuação e sem rótulo ainda pode ser ambíguo.
+
+\subsection{Menção a PIX}
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}pix.py}. A função \termotecnico{classificar} valida a entrada, mascara URLs e procura PIX ignorando a caixa. As propriedades Unicode de regex impedem uma coincidência quando há letra, marca combinante, número ou sublinhado junto ao termo.
+
+\begin{codigofonte}[Padrão usado para a palavra PIX]
+r"(?<![\p{L}\p{M}\p{N}_])pix(?![\p{L}\p{M}\p{N}_])"
+\end{codigofonte}
+
+\textbf{Exemplos:} ``Recebemos seu PIX'' e ``Não faça PIX'' retornam 1. ``pixel'', ``Pixar'', ``meu\_\allowbreak{}pix'' e uma menção que exista apenas na URL retornam 0. Essa feature registra o meio de pagamento citado; a intenção de solicitar uma transferência pertence a \termotecnico{solicita\_\allowbreak{}pagamento.py}.
+
+\clearpage
+\subsection{Erros de ortografia e gramática}
+\textbf{Arquivo:} \termotecnico{possui\_\allowbreak{}erros\_\allowbreak{}ortografia\_\allowbreak{}gramatica.py}. \termotecnico{detectar\_\allowbreak{}erros} obtém o corretor compartilhado do classificador. A revisão propriamente dita fica em \termotecnico{\_\allowbreak{}gramatica.py}. \termotecnico{classificar} converte a existência de apontamentos em 0 ou 1.
+
+A biblioteca language-tool-python inicia um servidor Java local do LanguageTool 6.8 em pt-BR. O corretor usa dicionário e regras linguísticas. O código mascara URLs, pede a verificação e mantém apenas ocorrências do tipo \termotecnico{misspelling} ou \termotecnico{grammar}. Apontamentos de estilo e tipografia são descartados.
+
+\begin{codigofonte}[Interface da feature]
+def detectar_erros(sms: str) -> list[dict]:
+    from .classificador import obter_classificador
+    return obter_classificador().corretor.detectar_erros(sms)
+
+def classificar(sms: str) -> int:
+    return int(bool(detectar_erros(sms)))
+\end{codigofonte}
+
+Cada erro devolve trecho original, posição inicial, comprimento, tipo, regra, mensagem explicativa e até cinco sugestões. O SMS não é corrigido automaticamente. A quantidade de ocorrências é exposta nos detalhes, mas não é transformada em uma taxa validada de qualidade de escrita.
+
+\begin{caixainfo}[Ocorrência realmente registrada]
+No SMS de demonstração, ``Sua conta foi bloquiada'' gerou um apontamento ortográfico para ``bloquiada'', com a sugestão ``bloqueada''. O identificador da regra foi \termotecnico{MORFOLOGIK\_\allowbreak{}RULE\_\allowbreak{}PT\_\allowbreak{}BR}. Esse registro está no arquivo \termotecnico{validacao/exemplo\_\allowbreak{}execucao.json}.
+\end{caixainfo}
+
+\begin{caixaatencao}[Limites do corretor]
+Nomes próprios, abreviações e gírias podem produzir falsos positivos. Zero apontamentos não garante texto perfeito. A primeira execução requer o download do servidor; Java 17 ou superior é necessário. Se o servidor não iniciar, o código informa falha, em vez de retornar uma lista vazia como se o texto estivesse correto.
+\end{caixaatencao}

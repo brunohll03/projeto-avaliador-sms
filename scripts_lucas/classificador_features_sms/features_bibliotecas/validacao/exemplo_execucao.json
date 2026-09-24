@@ -1,0 +1,204 @@
+{
+  "versao_metodo": "2.0.0-bibliotecas",
+  "features": {
+    "solicita_senha": 1,
+    "solicita_codigo_autenticacao": 0,
+    "solicita_dados_bancarios": 1,
+    "solicita_dados_pessoais": 0,
+    "solicita_dados_cartao": 0,
+    "solicita_atualizacao_cadastro": 0,
+    "solicita_pagamento": 0,
+    "solicita_clique": 0,
+    "solicita_ligacao": 0,
+    "menciona_bloqueio_conta": 0,
+    "carga_emocional": 0,
+    "possui_urgencia": 0,
+    "possui_ameaca": 0,
+    "possui_linguagem_alarmista": 0,
+    "possui_recompensa": 0,
+    "possui_reembolso": 0,
+    "possui_vantagem_inesperada": 0,
+    "possui_oferta_financeira": 0,
+    "possui_url": 1,
+    "possui_url_encurtada": 1,
+    "possui_telefone": 0,
+    "possui_pix": 0,
+    "possui_erros_ortografia_gramatica": 1,
+    "possui_chamada_acao": 0
+  },
+  "detalhes": {
+    "semanticas": {
+      "solicita_senha": {
+        "valor": 1,
+        "escore": 0.9940099716186523,
+        "limiar": 0.7,
+        "hipotese": "O remetente pede que o destinatário informe, envie ou digite sua senha.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "solicita_codigo_autenticacao": {
+        "valor": 0,
+        "escore": 0.0016658192034810781,
+        "limiar": 0.7,
+        "hipotese": "O remetente pede que o destinatário forneça um código de autenticação, token ou código recebido por SMS ou WhatsApp.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "solicita_dados_bancarios": {
+        "valor": 1,
+        "escore": 0.8350846171379089,
+        "limiar": 0.7,
+        "hipotese": "O remetente solicita dados bancários do destinatário, como banco, agência ou número de conta bancária.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "solicita_dados_pessoais": {
+        "valor": 0,
+        "escore": 0.0010274918749928474,
+        "limiar": 0.7,
+        "hipotese": "O remetente pede que o destinatário forneça dados pessoais, como CPF, RG, nome completo, endereço ou data de nascimento.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "solicita_dados_cartao": {
+        "valor": 0,
+        "escore": 0.0034295315854251385,
+        "limiar": 0.7,
+        "hipotese": "O remetente solicita o número, a validade, o CVV ou outros dados do cartão do destinatário.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "solicita_atualizacao_cadastro": {
+        "valor": 0,
+        "escore": 0.6784089207649231,
+        "limiar": 0.7,
+        "hipotese": "O remetente pede que o destinatário atualize, confirme ou regularize seu cadastro ou seus dados cadastrais.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "solicita_pagamento": {
+        "valor": 0,
+        "escore": 0.0013695702655240893,
+        "limiar": 0.7,
+        "hipotese": "O remetente pede que o destinatário faça um pagamento, depósito ou transferência de dinheiro.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "solicita_clique": {
+        "valor": 0,
+        "escore": 0.0549708791077137,
+        "limiar": 0.7,
+        "hipotese": "O remetente pede que o destinatário clique em um link ou botão, ou abra um endereço de internet.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "solicita_ligacao": {
+        "valor": 0,
+        "escore": 0.0011371460277587175,
+        "limiar": 0.7,
+        "hipotese": "O remetente pede que o destinatário faça uma ligação telefônica.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "menciona_bloqueio_conta": {
+        "valor": 0,
+        "escore": 0.4685472846031189,
+        "limiar": 0.7,
+        "hipotese": "A mensagem afirma que a conta, cartão, cadastro, acesso ou serviço do destinatário está ou será bloqueado, suspenso ou cancelado.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "carga_emocional": {
+        "valor": 0,
+        "escore": 0.01725081540644169,
+        "limiar": 0.7,
+        "hipotese": "A mensagem expressa ou tenta provocar emoções como medo, ansiedade, alegria, esperança, raiva ou surpresa.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "possui_urgencia": {
+        "valor": 0,
+        "escore": 0.0005998312262818217,
+        "limiar": 0.7,
+        "hipotese": "A mensagem pressiona o destinatário a agir rapidamente ou dentro de um prazo muito curto.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "possui_ameaca": {
+        "valor": 0,
+        "escore": 0.00034984093508683145,
+        "limiar": 0.7,
+        "hipotese": "A mensagem ameaça uma consequência negativa para o destinatário caso ele não realize uma ação solicitada.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "possui_linguagem_alarmista": {
+        "valor": 0,
+        "escore": 0.00045843899715691805,
+        "limiar": 0.7,
+        "hipotese": "A mensagem usa um tom de alarme ou perigo para assustar ou causar preocupação no destinatário.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "possui_recompensa": {
+        "valor": 0,
+        "escore": 0.0008339058258570731,
+        "limiar": 0.7,
+        "hipotese": "A mensagem afirma que o destinatário ganhou ou pode resgatar um prêmio, recompensa, brinde ou bônus.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "possui_reembolso": {
+        "valor": 0,
+        "escore": 0.0064606149680912495,
+        "limiar": 0.7,
+        "hipotese": "A mensagem informa que o destinatário tem reembolso, restituição ou devolução de dinheiro disponível para receber.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "possui_vantagem_inesperada": {
+        "valor": 0,
+        "escore": 0.0075655835680663586,
+        "limiar": 0.7,
+        "hipotese": "A mensagem oferece ao destinatário um benefício inesperado, uma seleção especial ou uma vantagem extraordinária não solicitada.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "possui_oferta_financeira": {
+        "valor": 0,
+        "escore": 0.004165515303611755,
+        "limiar": 0.7,
+        "hipotese": "A mensagem oferece crédito, empréstimo, financiamento ou oportunidade de investimento ao destinatário.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      },
+      "possui_chamada_acao": {
+        "valor": 0,
+        "escore": 0.5628783702850342,
+        "limiar": 0.7,
+        "hipotese": "O remetente solicita que o destinatário realize uma ação concreta.",
+        "metodo": "NLI zero-shot multilabel; escore não calibrado"
+      }
+    },
+    "urls": [
+      {
+        "texto": "https://bit.ly/exemplo",
+        "url": "https://bit.ly/exemplo",
+        "dominio": "bit.ly",
+        "inicio": 27,
+        "fim": 49
+      }
+    ],
+    "telefones": [],
+    "quantidade_erros": 1,
+    "erros_detectados": [
+      {
+        "trecho": "bloquiada",
+        "inicio": 65,
+        "comprimento": 9,
+        "tipo": "ortografia",
+        "regra": "MORFOLOGIK_RULE_PT_BR",
+        "mensagem": "Encontrado possível erro de ortografia.",
+        "sugestoes": [
+          "bloqueada"
+        ]
+      }
+    ],
+    "carga_emocional": {
+      "valor": 0,
+      "escore": 0.01725081540644169,
+      "limiar": 0.7,
+      "hipotese": "A mensagem expressa ou tenta provocar emoções como medo, ansiedade, alegria, esperança, raiva ou surpresa.",
+      "metodo": "NLI zero-shot multilabel; escore não calibrado"
+    }
+  },
+  "configuracao": {
+    "modelo": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+    "revisao_solicitada": "main",
+    "revisao_carregada": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+    "languagetool": "6.8",
+    "idioma_corretor": "pt-BR"
+  }
+}

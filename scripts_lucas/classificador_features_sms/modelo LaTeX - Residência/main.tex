@@ -1,0 +1,29 @@
+% !TeX program = xelatex
+% Documentação do código em ../features_bibliotecas.
+\documentclass[11pt,a4paper]{article}
+\input{config/pacotes}
+\input{config/dados}
+\input{config/estilo}
+\setcounter{tocdepth}{1}
+\begin{document}
+\input{config/capa}
+\setcounter{page}{2}
+\pagestyle{fancy}
+\ifExibirSumario
+\tableofcontents
+\clearpage
+\fi
+\input{capitulos/01-inicio}
+\clearpage
+\input{capitulos/02-recursos}
+\clearpage
+\input{capitulos/03-features-semanticas}
+\clearpage
+\input{capitulos/04-features-estruturais}
+\clearpage
+\input{capitulos/05-modulos-apoio}
+\clearpage
+\input{capitulos/06-execucao-validacao}
+\clearpage
+\input{capitulos/07-referencias}
+\end{document}

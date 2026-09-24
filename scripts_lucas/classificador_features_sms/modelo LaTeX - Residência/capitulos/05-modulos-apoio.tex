@@ -1,0 +1,90 @@
+\section{Os dez módulos de apoio}
+\subsection{\texttt{classificador.py}: coordenação das features}
+\termotecnico{NOMES} define as 24 chaves e sua ordem. \termotecnico{MODULOS} importa cada módulo com \termotecnico{importlib}. \termotecnico{HIPOTESES} seleciona somente os 19 módulos que possuem a constante correspondente.
+
+A classe \termotecnico{ClassificadorFeatures} cria um motor semântico e um corretor. O construtor pode receber versões substitutas desses objetos para testes. Também rejeita limiares associados a nomes que não sejam features semânticas.
+
+\begin{tabularx}{\linewidth}{@{}p{0.39\linewidth}X@{}}
+\toprule
+\textbf{Função ou método} & \textbf{Papel} \\
+\midrule
+\termotecnico{medir\_\allowbreak{}feature} & Avalia uma hipótese identificada pelo nome. Para emoção, mascara URLs antes de chamar o motor. \\
+\termotecnico{\_\allowbreak{}medida} & Compara escore e limiar e monta o dicionário explicativo da decisão. \\
+\termotecnico{analisar\_\allowbreak{}sms} & Reúne features, detalhes e informações sobre o modelo e o corretor. \\
+\termotecnico{classificar\_\allowbreak{}sms} & Devolve somente o dicionário das 24 features. \\
+\termotecnico{obter\_\allowbreak{}classificador} & Reutiliza uma instância padrão, criada apenas no primeiro uso. \\
+\termotecnico{close} & Encerra o servidor local do corretor. \\
+\bottomrule
+\end{tabularx}
+
+A biblioteca padrão \termotecnico{atexit} registra o encerramento do corretor padrão na saída do processo. Os métodos de contexto permitem usar \termotecnico{with ClassificadorFeatures()}. Os modelos são reutilizados, mas as mensagens não são guardadas em um cache de resultados.
+
+\subsection{\texttt{config.py}: escolhas explícitas}
+A classe \termotecnico{Configuracao} usa \termotecnico{dataclasses} para reunir as opções. Os padrões são: modelo mDeBERTa, revisão \termotecnico{main}, limiar 0,70, CPU, lote de 8 pares, carregamento local exclusivo desativado e LanguageTool 6.8. O dicionário \termotecnico{limiares} permite um valor específico por feature.
+
+\termotecnico{\_\allowbreak{}\_\allowbreak{}post\_\allowbreak{}init\_\allowbreak{}\_\allowbreak{}} verifica, com \termotecnico{math.isfinite}, se cada limiar é finito e estritamente entre 0 e 1. O tamanho do lote deve ser um inteiro positivo. \termotecnico{limiar\_\allowbreak{}de(nome)} consulta a exceção individual ou devolve o valor geral. Ajustar um limiar altera a decisão; isso, por si só, não constitui calibração estatística.
+
+\clearpage
+\subsection{\texttt{\_\allowbreak{}semantica.py}: execução do modelo}
+A pipeline começa vazia. A função \termotecnico{\_\allowbreak{}carregar} carrega os recursos por meio de duas classes de Transformers: \termotecnico{AutoTokenizer} para o tokenizador e \termotecnico{AutoModelFor\allowbreak{}SequenceClassification} para os pesos. O código exige pesos Safetensors, desativa código remoto do repositório e verifica os nomes apoio, neutro e contradição no mapa de classes.
+
+\termotecnico{escores} valida o texto, retorna zeros para entrada vazia, confere o limite de tokens e monta pares SMS/hipótese. A pipeline usa softmax sobre as três classes e seleciona apoio pelo nome. A implementação confere a quantidade de resultados e se cada escore é finito e está entre 0 e 1. \termotecnico{revisao\_\allowbreak{}carregada} disponibiliza o identificador do commit dos pesos, quando fornecido pelo modelo.
+
+\begin{caixainfo}[O que é compartilhado]
+Há um só modelo por instância do motor, atendendo todas as features semânticas. O prefixo de sublinhado no arquivo indica uma função interna do pacote, não um segundo classificador independente treinado para cada feature.
+\end{caixainfo}
+
+\subsection{\texttt{\_\allowbreak{}urls.py}: extração, validação e máscaras}
+\termotecnico{\_\allowbreak{}extrator} cria um objeto LinkifyIt e o reutiliza com \termotecnico{functools.lru\_\allowbreak{}cache}. Esse cache guarda o extrator, não os SMS. \termotecnico{dominio} usa \termotecnico{urllib.parse.urlsplit} para separar a URL e verifica também a porta. \termotecnico{ipaddress.ip\_\allowbreak{}address} valida IPs; domínios são convertidos para IDNA e passam por restrições de tamanho, rótulos e hífens.
+
+\termotecnico{ocorrencias} filtra os esquemas aceitos e retorna texto original, URL normalizada, domínio e índices inicial/final. \termotecnico{extrair\_\allowbreak{}urls} reduz essas ocorrências a uma lista de textos. \termotecnico{mascarar\_\allowbreak{}urls} substitui cada intervalo por espaços do mesmo tamanho, preservando posições para as demais análises.
+
+\subsection{\texttt{\_\allowbreak{}texto.py}: contrato da entrada}
+Contém \termotecnico{validar(sms)}, que exige uma string e a devolve sem alteração. Não remove acentos, não converte para minúsculas e não corrige escrita. Essa validação simples é compartilhada pelos módulos para evitar tratar entradas inválidas como mensagens sem features.
+
+\clearpage
+\subsection{\texttt{\_\allowbreak{}gramatica.py}: ciclo de vida do corretor}
+A classe \termotecnico{Corretor} recebe a versão do LanguageTool e adia a inicialização até precisar revisar texto. \termotecnico{detectar\_\allowbreak{}erros} retorna lista vazia para texto vazio ou para uma mensagem que, depois de mascarar URLs, não tenha conteúdo. Nos outros casos, inicia o servidor local, consulta \termotecnico{check}, filtra os tipos aceitos e monta as evidências de erro.
+
+\termotecnico{close} encerra o servidor e limpa a referência. A biblioteca externa é language-tool-python; Java executa o servidor LanguageTool. O código não usa a API pública do serviço. Falhas de inicialização são convertidas em uma mensagem que explica a dependência de Java, pacotes e download inicial.
+
+\subsection{\texttt{\_\allowbreak{}\_\allowbreak{}init\_\allowbreak{}\_\allowbreak{}.py}: interface de importação}
+Exporta \termotecnico{ClassificadorFeatures}, \termotecnico{Configuracao}, \termotecnico{analisar\_\allowbreak{}sms} e \termotecnico{classificar\_\allowbreak{}sms}. Assim, o usuário importa as funções diretamente de \termotecnico{classificador\_\allowbreak{}features\_\allowbreak{}sms.features\_\allowbreak{}bibliotecas}. A lista \termotecnico{\_\allowbreak{}\_\allowbreak{}all\_\allowbreak{}\_\allowbreak{}} declara essa interface pública. Importar o pacote não carrega imediatamente os pesos NLI nem inicia Java.
+
+\subsection{\texttt{main.py}: interface de terminal}
+Usa \termotecnico{argparse} para interpretar argumentos, \termotecnico{sys} para ler entrada padrão e \termotecnico{json} para imprimir o resultado. \termotecnico{pathlib} permite ajustar o caminho de importação quando o arquivo é executado diretamente.
+
+O texto entre aspas é tratado como uma mensagem. O argumento ``-'' lê toda a entrada padrão; várias linhas continuam formando um único SMS. Sem texto, a função usa entrada padrão quando houver redirecionamento ou solicita digitação interativa.
+
+\begin{tabularx}{\linewidth}{@{}p{0.33\linewidth}X@{}}
+\toprule
+\textbf{Opção} & \textbf{Efeito} \\
+\midrule
+\termotecnico{--detalhes} & Inclui escores, hipóteses, limiares e evidências. \\
+\termotecnico{--limiar} & Define o limiar geral das features semânticas. \\
+\termotecnico{--somente-local} & Impede download dos pesos NLI; LanguageTool precisa estar no cache para uma execução totalmente sem rede. \\
+\termotecnico{--revisao} & Seleciona a revisão ou commit dos pesos. \\
+\bottomrule
+\end{tabularx}
+
+Falhas previstas são impressas como erro e encerram o processo com código 2. A saída normal é JSON em UTF-8, com acentos preservados.
+
+\clearpage
+\subsection{\texttt{avaliar\_\allowbreak{}exemplos.py}: avaliação didática real}
+Lê \termotecnico{\_\allowbreak{}definicoes.json} com \termotecnico{json} e \termotecnico{pathlib}. Para cada uma das 19 features semânticas, avalia uma mensagem positiva e uma negativa, totalizando 38 casos. O script chama \termotecnico{medir\_\allowbreak{}feature}; por isso executa o modelo real, mas não precisa consultar o corretor Java.
+
+Os argumentos permitem escolher modelo, revisão, limiar e carregamento local. A saída registra feature, mensagem, rótulo esperado, valor observado, escore e acerto de cada caso, além do total, modelo e revisão. Não há atualização de pesos nem ajuste automático de limiares. Os exemplos servem para inspecionar erros de desenvolvimento; não estimam desempenho em uma população real de SMS.
+
+\subsection{\texttt{test\_\allowbreak{}bibliotecas.py}: testes de funcionamento}
+Usa \termotecnico{unittest} para verificar contratos e \termotecnico{unittest.mock} para substituir o motor NLI e o corretor em testes controlados. \termotecnico{SimpleNamespace} representa um apontamento do corretor sem iniciar Java.
+
+Os testes de URL, telefone e PIX utilizam as bibliotecas reais. Os demais verificam tipos de entrada, 24 chaves, consistência das hipóteses, limiares individuais, reutilização do motor, tratamento de falhas, limite de tokens, classes NLI fora de ordem e filtragem de erros de escrita.
+
+\begin{caixaatencao}[Teste de programa não é avaliação do modelo]
+Uma simulação pode confirmar que escore 0,90 ultrapassa limiar 0,70, mas não prova que o modelo real produzirá o escore correto para uma mensagem. Os 13 testes aprovados e os 27 acertos em 38 exemplos medem aspectos diferentes.
+\end{caixaatencao}
+
+\subsection{Arquivos complementares}
+\termotecnico{requirements.txt} declara dependências; \termotecnico{\_\allowbreak{}definicoes.json} reúne hipóteses, explicações e exemplos para avaliação. Os módulos Python são a origem das hipóteses na execução comum; um teste compara essa origem com o JSON para detectar divergências.
+
+\termotecnico{README.md} contém instruções de uso; \termotecnico{VALIDACAO.md} descreve verificações e limitações. A pasta \termotecnico{validacao} conserva saídas reais, comparações de modelos e versões dos pacotes testados. Esses arquivos documentam a execução; não são dados de treinamento nem pesos de modelo.

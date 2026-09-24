@@ -1,0 +1,2 @@
+# Dependências da versão final; execute a partir da raiz do repositório.
+-r notebook_features_final/requirements.txt

@@ -1,0 +1,50 @@
+# Ambientes Python e arquivos compilados
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Jupyter, caches locais e downloads de ferramentas
+.ipynb_checkpoints/
+cache_languagetool/
+cache_matplotlib/
+LanguageTool-*/
+
+# Configuração local e credenciais
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.tmp
+*.swp
+
+# Saídas regeneráveis (não excluir os CSVs de entrada nem testes sintéticos)
+/comparacoes/
+/DATASET - Dataset_limpo_sem_atributos_biblioteca.csv
+/*.numbers
+/*.zip
+/notebook_features_final/resultados/*
+# Este arquivo é uma referência utilizada pelo teste de revisão de senha.
+!/notebook_features_final/resultados/analise_solicita_senha.csv
+/notebook_features_final/classificador_final_revisao.html
+/notebook_features_final/auditoria_divergencias_*/resultados_antes/
+/notebook_features_final/auditoria_divergencias_*/resultados_depois/
+/notebook_features_final/auditoria_divergencias_*/codigo_antes/
+/notebook_features_final/auditoria_divergencias_*/triagem_divergencias.csv
+/notebook_features_final/auditoria_divergencias_*/analise_codigo_autenticacao.csv
+/notebook_features_final/auditoria_divergencias_*/mudancas_resultados.csv
+/notebook_features_final/auditoria_divergencias_*/resumo_por_feature.csv
+/notebook_features_final/auditoria_divergencias_*/resumo_auditoria.json
+# casos_revisados.json NÃO é ignorado: serve de gabarito de regressão.
